@@ -38,14 +38,6 @@
                 app:layout_constraintBottom_toBottomOf="@id/scroll"
                 app:layout_constraintTop_toBottomOf="@id/But1" />
 
-            <Button
-                android:id="@+id/But3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tap3"
-                app:layout_constraintBottom_toBottomOf="@id/scroll"
-                app:layout_constraintTop_toBottomOf="@id/scroll" />
-
 
         </LinearLayout>
     </ScrollView>
