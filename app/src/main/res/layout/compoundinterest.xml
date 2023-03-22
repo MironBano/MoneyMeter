@@ -16,49 +16,70 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <GridLayout
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_marginTop="0dp"
+            android:layout_marginStart="13dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:gravity="start"
-            android:columnCount="2">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
-                android:text="@string/initialAmount"/>
-
-            <EditText
-                android:id="@+id/InitAmount"
-                android:layout_marginTop="7dp"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_column="0"
-
-                android:background="@drawable/edittext_form"
-                android:hint="@string/initialAmountHint"
-                android:textColorHint="@color/white"
-                android:textSize="25sp"
-                android:cursorVisible="false"
-                android:imeOptions="actionNext"
-                android:inputType="number"
-                android:maxLength="20" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:layout_marginStart="7dp"
-                android:text="$"
-                android:textSize="25sp"
-                android:layout_column="1"
+                android:text="@string/initialAmount"
                 />
 
-        </GridLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/InitAmount"
+                    android:layout_marginTop="7dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+
+                    android:background="@drawable/edittext_form"
+                    android:importantForAutofill="no"
+                    android:hint="@string/initialAmountHint"
+                    android:textColorHint="@color/white"
+                    android:textSize="25sp"
+                    android:cursorVisible="false"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="20"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginStart="7dp"
+                    android:text="₽"
+                    android:textSize="25sp"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:text="@string/reinvestmentPeriod"
+                />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:entries="@array/reinvestmentPeriodArray"
+                />
+
+
+
+
+        </LinearLayout>
 
     </ScrollView>
 
