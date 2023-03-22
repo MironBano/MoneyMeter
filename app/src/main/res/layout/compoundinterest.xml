@@ -41,6 +41,7 @@
 
                 android:background="@drawable/edittext_form"
                 android:hint="@string/initialAmountHint"
+                android:textColorHint="@color/white"
                 android:textSize="25sp"
                 android:cursorVisible="false"
                 android:imeOptions="actionNext"
