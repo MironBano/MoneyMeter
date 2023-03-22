@@ -17,10 +17,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <GridLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
             android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"
             android:gravity="start"
             android:columnCount="2">
@@ -28,21 +29,23 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="25sp"
                 android:text="@string/initialAmount"/>
 
             <EditText
                 android:id="@+id/InitAmount"
                 android:layout_marginTop="7dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_column="0"
 
+                android:background="@drawable/edittext_form"
                 android:hint="@string/initialAmountHint"
-                android:background="@color/gray"
+                android:textSize="25sp"
                 android:cursorVisible="false"
                 android:imeOptions="actionNext"
                 android:inputType="number"
-                android:maxLength="25" />
+                android:maxLength="20" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -50,6 +53,7 @@
                 android:layout_marginTop="7dp"
                 android:layout_marginStart="7dp"
                 android:text="$"
+                android:textSize="25sp"
                 android:layout_column="1"
                 />
 
