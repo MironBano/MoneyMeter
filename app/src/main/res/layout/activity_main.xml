@@ -13,31 +13,29 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="start"
             android:orientation="vertical">
 
             <Button
                 android:id="@+id/compoundInterestButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/CIButton"
-                app:layout_constraintBottom_toBottomOf="@id/mainScroll"
-                app:layout_constraintTop_toBottomOf="@id/mainScroll" />
+                android:text="@string/CIButton" />
 
             <Button
                 android:id="@+id/But2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tap2"
-                app:layout_constraintBottom_toBottomOf="@id/mainScroll"
-                app:layout_constraintTop_toBottomOf="@id/mainScroll" />
+                android:text="Tap2" />
         </LinearLayout>
+
     </ScrollView>
 
 
