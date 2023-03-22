@@ -12,9 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
 
-        binding.But1.text = "compound interest"
-
-        binding.But1.setOnClickListener{
+        binding.compoundInterestButton.setOnClickListener{
             val intent = Intent(this@MainActivity, CompoundInterest::class.java)
             startActivity(intent)
         }

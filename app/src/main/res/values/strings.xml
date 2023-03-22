@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MoneyMeter</string>
+    <string name="CIButton">Compound Interest</string>
 </resources>
