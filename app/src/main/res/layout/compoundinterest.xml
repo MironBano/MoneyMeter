@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="7dp"
             android:layout_marginStart="13dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:text="@string/initialAmount"
                 />
 
@@ -45,9 +45,9 @@
                     android:importantForAutofill="no"
                     android:hint="@string/initialAmountHint"
                     android:textColorHint="@color/white"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     android:cursorVisible="false"
-                    android:imeOptions="actionNext"
+                    android:imeOptions="actionDone"
                     android:inputType="number"
                     android:maxLength="20"
                     />
@@ -58,22 +58,78 @@
                     android:layout_marginTop="7dp"
                     android:layout_marginStart="7dp"
                     android:text="₽"
-                    android:textSize="25sp"
+                    android:textSize="20sp"
                     />
 
             </LinearLayout>
 
             <TextView
+                android:layout_marginTop="7dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:text="@string/reinvestmentPeriod"
                 />
 
             <Spinner
-                android:layout_width="match_parent"
+                android:background="@drawable/edittext_form"
+                android:layout_marginTop="7dp"
+                android:layout_width="200dp"
                 android:layout_height="48dp"
                 android:entries="@array/reinvestmentPeriodArray"
+                />
+
+            <TextView
+                android:layout_marginTop="7dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@string/term"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.slider.Slider
+                    android:layout_width="220dp"
+                    android:layout_height="match_parent"
+                    android:valueFrom="0"
+                    android:valueTo="100"
+                    />
+
+                <TextView
+                    android:background="@drawable/edittext_form"
+                    android:layout_width="55dp"
+                    android:layout_height="48dp"
+
+                    android:text="228"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="20sp"
+
+                    />
+                <TextView
+                    android:background="@drawable/edittext_form"
+                    android:layout_marginStart="7dp"
+                    android:layout_width="55dp"
+                    android:layout_height="48dp"
+
+                    android:text="лет"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="20sp"
+
+                    />
+
+            </LinearLayout>
+            <TextView
+                android:layout_marginTop="7dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@string/additionalAttachments"
                 />
 
 

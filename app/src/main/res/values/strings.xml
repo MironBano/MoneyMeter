@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">MoneyMeter</string>
     <string name="CIButton">Compound Interest</string>
-    <string name="initialAmount">Initial amount</string>
-    <string name="initialAmountHint">Enter initial amount</string>
+    <string name="initialAmount">Начальная сумма</string>
+    <string name="initialAmountHint">Введите число</string>
     <string name="reinvestmentPeriod">Период реинвестирования</string>
     <string-array name="reinvestmentPeriodArray">
         <item>Раз в месяц</item>
@@ -11,4 +11,6 @@
         <item>Раз в год</item>
         <item>Своё</item>
     </string-array>
+    <string name="additionalAttachments">Дополнительные вложения</string>
+    <string name="term">Срок</string>
 </resources>
