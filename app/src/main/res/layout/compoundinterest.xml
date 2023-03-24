@@ -5,7 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_grey"
     tools:context=".MainActivity">
+
 
     <ScrollView
         android:id="@+id/CIScroll"
@@ -16,6 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <LinearLayout
             android:layout_marginTop="7dp"
             android:layout_marginStart="13dp"
@@ -23,11 +26,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
                 android:text="@string/initialAmount"
+                style="@style/TextPrimary"
                 />
 
             <LinearLayout
@@ -50,25 +52,25 @@
                     android:imeOptions="actionDone"
                     android:inputType="number"
                     android:maxLength="20"
+                    style="@style/TextSecondary"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
                     android:layout_marginStart="7dp"
+                    android:layout_marginTop="7dp"
                     android:text="₽"
                     android:textSize="20sp"
+                    style="@style/TextSecondary"
                     />
 
             </LinearLayout>
 
             <TextView
                 android:layout_marginTop="7dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
                 android:text="@string/reinvestmentPeriod"
+                style="@style/TextPrimary"
                 />
 
             <Spinner
@@ -77,14 +79,13 @@
                 android:layout_width="200dp"
                 android:layout_height="48dp"
                 android:entries="@array/reinvestmentPeriodArray"
+
                 />
 
             <TextView
                 android:layout_marginTop="7dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
                 android:text="@string/term"
+                style="@style/TextPrimary"
                 />
 
             <LinearLayout
@@ -101,43 +102,37 @@
 
                 <TextView
                     android:background="@drawable/edittext_form"
-                    android:layout_width="55dp"
-                    android:layout_height="48dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
 
-                    android:text="228"
-                    android:textColor="@color/white"
-                    android:gravity="center"
                     android:textSize="20sp"
+                    android:text="228"
+                    style="@style/TextSecondary"
 
                     />
                 <TextView
-                    android:background="@drawable/edittext_form"
-                    android:layout_marginStart="7dp"
-                    android:layout_width="55dp"
-                    android:layout_height="48dp"
-
-                    android:text="лет"
-                    android:textColor="@color/white"
-                    android:gravity="center"
-                    android:textSize="20sp"
-
-                    />
-
-            </LinearLayout>
-            <TextView
-                android:layout_marginTop="7dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_form"
+                android:layout_marginStart="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:textSize="20sp"
-                android:text="@string/additionalAttachments"
+                    android:text="лет"
+                style="@style/TextSecondary"
                 />
 
-
-
-
         </LinearLayout>
+        <TextView
+            android:layout_marginTop="7dp"
+            android:text="@string/additionalAttachments"
+            style="@style/TextPrimary"
+            />
 
-    </ScrollView>
+
+
+
+    </LinearLayout>
+
+</ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
