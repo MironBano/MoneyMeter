@@ -56,8 +56,6 @@
                     />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:layout_marginStart="7dp"
                     android:layout_marginTop="7dp"
                     android:text="₽"
@@ -104,7 +102,6 @@
                     android:background="@drawable/edittext_form"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
                     android:textSize="20sp"
                     android:text="228"
                     style="@style/TextSecondary"
