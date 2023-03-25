@@ -16,7 +16,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
 
         <LinearLayout
@@ -92,29 +93,33 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.slider.Slider
+                    android:id="@+id/termSlider"
                     android:layout_width="220dp"
                     android:layout_height="match_parent"
-                    android:valueFrom="0"
-                    android:valueTo="100"
+                    android:valueFrom="1"
+                    android:valueTo="50"
+                    app:labelBehavior="gone"
+                    app:haloColor="@color/transparent"
                     />
 
                 <TextView
+                    android:id="@+id/textTermNumber"
                     android:background="@drawable/edittext_form"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textSize="20sp"
-                    android:text="228"
+                    android:text="0"
                     style="@style/TextSecondary"
 
                     />
                 <TextView
-                android:background="@drawable/edittext_form"
-                android:layout_marginStart="7dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textSize="20sp"
+                    android:background="@drawable/edittext_form"
+                    android:layout_marginStart="7dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="20sp"
                     android:text="лет"
-                style="@style/TextSecondary"
+                    style="@style/TextSecondary"
                 />
 
         </LinearLayout>
