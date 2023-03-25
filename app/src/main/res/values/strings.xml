@@ -12,6 +12,13 @@
         <item>Раз в год</item>
         <item>Своё</item>
     </string-array>
+    <string-array name="reinvestmentTermArray">
+        <item>Месяц</item>
+        <item>Квартал</item>
+        <item>2 квартала</item>
+        <item>Год</item>
+        <item>Своё</item>
+    </string-array>
     <string name="additionalAttachments">Дополнительные вложения</string>
     <string name="term">Срок</string>
     <string name="cross">×</string>
