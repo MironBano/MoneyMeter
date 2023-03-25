@@ -48,7 +48,7 @@
                     android:importantForAutofill="no"
                     android:hint="@string/initialAmountHint"
                     android:textColorHint="@color/white"
-                    android:textSize="20sp"
+                    android:textSize="17sp"
                     android:cursorVisible="false"
                     android:imeOptions="actionDone"
                     android:inputType="number"
@@ -77,8 +77,8 @@
                 android:layout_marginTop="7dp"
                 android:layout_width="200dp"
                 android:layout_height="48dp"
+                android:textAlignment="center"
                 android:entries="@array/reinvestmentPeriodArray"
-
                 />
 
             <TextView
@@ -97,7 +97,7 @@
                     android:layout_width="220dp"
                     android:layout_height="match_parent"
                     android:valueFrom="1"
-                    android:valueTo="50"
+                    android:valueTo="30"
                     app:labelBehavior="gone"
                     app:haloColor="@color/transparent"
                     />
@@ -110,8 +110,8 @@
                     android:textSize="20sp"
                     android:text="0"
                     style="@style/TextSecondary"
-
                     />
+
                 <TextView
                     android:background="@drawable/edittext_form"
                     android:layout_marginStart="7dp"
@@ -119,20 +119,56 @@
                     android:layout_height="match_parent"
                     android:textSize="20sp"
                     android:text="лет"
+                    style="@style/TextSecondary" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="13dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/additional_attachments_form">
+
+                <TextView
+                    android:layout_marginTop="7dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/additionalAttachments"
                     style="@style/TextSecondary"
-                />
+                    />
+
+                <EditText
+                    android:layout_marginTop="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+
+                    android:background="@drawable/edittext_form"
+                    android:importantForAutofill="no"
+                    android:hint="@string/AmountHint"
+                    android:textColorHint="@color/white"
+                    android:textSize="17sp"
+                    android:cursorVisible="false"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    style="@style/TextSecondary"
+                    />
+
+                <Spinner
+                    android:background="@drawable/edittext_form"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"
+                    android:textAlignment="center"
+                    android:entries="@array/reinvestmentPeriodArray"
+                    />
+
+
+            </FrameLayout>
+
 
         </LinearLayout>
-        <TextView
-            android:layout_marginTop="7dp"
-            android:text="@string/additionalAttachments"
-            style="@style/TextPrimary"
-            />
-
-
-
-
-    </LinearLayout>
 
 </ScrollView>
 
