@@ -5,10 +5,10 @@
     <padding
         android:left="10dp"
         android:right="10dp" />
-    <solid android:color="@color/bright_grey"/>
+    <solid android:color="@color/darkContainer"/>
     <stroke
         android:width="10dp"
-        android:color="@color/bright_grey"/>
+        android:color="@color/darkContainer"/>
     <corners
         android:bottomRightRadius="6dp"
         android:bottomLeftRadius="6dp"

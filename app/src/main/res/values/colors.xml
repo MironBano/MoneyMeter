@@ -9,7 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#FFF066</color>
     <color name="dark_grey">#222222</color>
-    <color name="light_grey">#424242</color>
-    <color name="bright_grey">#898989</color>
+    <color name="darkContainer">#1C1C1E</color>
+    <color name="light_grey">#333333</color>
+    <color name="bright_grey">#9B9FA8</color>
     <color name="transparent">@android:color/transparent</color>
 </resources>
