@@ -2,9 +2,13 @@
     <string name="app_name">MoneyMeter</string>
     <string name="CIButton">Compound Interest</string>
     <string name="initialAmount">Начальная сумма</string>
+    <string name="rate">Ставка</string>
     <string name="AmountHint">Сумма</string>
     <string name="initialAmountHint">Введите число</string>
     <string name="reinvestmentPeriod">Период реинвестирования</string>
+    <string name="ratePercent">% годовых</string>
+    <string name="EnterHint1">100 000</string>
+    <string name="EnterHint2">10</string>
     <string-array name="reinvestmentPeriodArray">
         <item>Раз в месяц</item>
         <item>Раз в квартал</item>

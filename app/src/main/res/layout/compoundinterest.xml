@@ -15,9 +15,10 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        >
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/MainConst"
@@ -29,8 +30,8 @@
                 android:id="@+id/StartPoint"
                 android:layout_width="13dp"
                 android:layout_height="13dp"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
 
                 />
 
@@ -39,41 +40,50 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:barrierDirection="end"
-                app:constraint_referenced_ids="StartPoint"
-                />
+                app:constraint_referenced_ids="StartPoint" />
 
 
             <TextView
                 android:id="@+id/text1"
 
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
-                app:layout_constraintTop_toTopOf="parent"
+                style="@style/TextPrimary"
                 android:layout_marginTop="13dp"
+                android:text="@string/initialAmount"
+
+                app:layout_constraintStart_toEndOf="@id/mainBarrier"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/Rate"
 
                 style="@style/TextPrimary"
-                android:text="@string/initialAmount"
+                android:text="@string/rate"
+                app:layout_constraintBottom_toBottomOf="@+id/text1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text1"
+                app:layout_constraintTop_toTopOf="@+id/text1"
+                android:layout_marginEnd="50dp"
                 />
 
             <EditText
                 android:id="@+id/InitAmount"
 
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
-                app:layout_constraintTop_toBottomOf="@id/text1"
-                android:layout_marginTop="7dp"
+                style="@style/TextSecondary"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-
-                style="@style/TextSecondary"
+                android:layout_marginTop="7dp"
                 android:background="@drawable/edittext_form"
+
                 android:cursorVisible="false"
-                android:hint="@string/initialAmountHint"
+                android:hint="@string/EnterHint1"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:inputType="number"
-                android:maxLength="20"
+                android:maxLength="14"
                 android:textColorHint="@color/white"
                 android:textSize="17sp"
-                />
+                app:layout_constraintStart_toEndOf="@id/mainBarrier"
+                app:layout_constraintTop_toBottomOf="@id/text1" />
 
             <TextView
                 android:id="@+id/textView"
@@ -83,8 +93,43 @@
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/InitAmount"
                 app:layout_constraintStart_toEndOf="@+id/InitAmount"
+                app:layout_constraintTop_toTopOf="@+id/InitAmount" />
+
+            <EditText
+                android:id="@+id/PercentAmount"
+
+
+                style="@style/TextSecondary"
+                android:layout_width="48dp"
+
+                android:layout_height="48dp"
+                android:background="@drawable/edittext_form"
+                android:cursorVisible="false"
+                android:hint="@string/EnterHint2"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textColorHint="@color/white"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@+id/InitAmount"
+                app:layout_constraintStart_toStartOf="@id/Rate"
                 app:layout_constraintTop_toTopOf="@+id/InitAmount"
                 />
+
+            <TextView
+                android:id="@+id/RatePercent"
+
+                style="@style/TextSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ratePercent"
+                app:layout_constraintBottom_toBottomOf="@+id/PercentAmount"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/PercentAmount"
+                app:layout_constraintTop_toTopOf="@+id/PercentAmount"
+                android:layout_marginEnd="13dp"/>
+
 
             <TextView
                 android:id="@+id/textView2"
@@ -97,81 +142,77 @@
 
             <Spinner
                 android:id="@+id/spinner1"
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
-                app:layout_constraintTop_toBottomOf="@+id/textView2"
-                android:layout_marginTop="7dp"
-
+                style="@style/TextSecondary"
                 android:layout_width="200dp"
                 android:layout_height="48dp"
+
+                android:layout_marginTop="7dp"
                 android:background="@drawable/edittext_form"
                 android:entries="@array/reinvestmentPeriodArray"
                 android:textAlignment="center"
-                style="@style/TextSecondary"
-                />
+                app:layout_constraintStart_toEndOf="@id/mainBarrier"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
             <TextView
                 android:id="@+id/amountText"
-                app:layout_constraintTop_toBottomOf="@id/spinner1"
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
-                android:layout_marginTop="7dp"
-
                 style="@style/TextPrimary"
+                android:layout_marginTop="7dp"
                 android:text="@string/term"
-                />
+
+                app:layout_constraintStart_toEndOf="@id/mainBarrier"
+                app:layout_constraintTop_toBottomOf="@id/spinner1" />
 
             <com.google.android.material.slider.Slider
                 android:id="@+id/termSlider"
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
-                app:layout_constraintTop_toBottomOf="@+id/amountText"
-
                 android:layout_width="220dp"
                 android:layout_height="match_parent"
+
                 android:valueFrom="1"
                 android:valueTo="30"
                 app:haloColor="@color/transparent"
                 app:labelBehavior="gone"
-                />
+                app:layout_constraintStart_toEndOf="@id/mainBarrier"
+                app:layout_constraintTop_toBottomOf="@+id/amountText" />
 
             <TextView
                 android:id="@+id/textTermNumber"
 
-                app:layout_constraintBottom_toBottomOf="@+id/termSlider"
-                app:layout_constraintStart_toEndOf="@+id/termSlider"
-                app:layout_constraintTop_toTopOf="@+id/termSlider"
-                android:layout_marginStart="7dp"
-
                 style="@style/TextSecondary"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
+                android:layout_marginStart="7dp"
+
                 android:background="@drawable/edittext_form"
                 android:text="0"
                 android:textSize="20sp"
-            />
+                app:layout_constraintBottom_toBottomOf="@+id/termSlider"
+                app:layout_constraintStart_toEndOf="@+id/termSlider"
+                app:layout_constraintTop_toTopOf="@+id/termSlider" />
 
             <TextView
                 android:id="@+id/termText"
 
-                app:layout_constraintBottom_toBottomOf="@+id/textTermNumber"
-                app:layout_constraintStart_toEndOf="@+id/textTermNumber"
-                app:layout_constraintTop_toTopOf="@+id/textTermNumber"
-                android:layout_marginStart="7dp"
-
                 style="@style/TextSecondary"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+
                 android:background="@drawable/edittext_form"
                 android:text="лет"
                 android:textSize="20sp"
-                />
+                app:layout_constraintBottom_toBottomOf="@+id/textTermNumber"
+                app:layout_constraintStart_toEndOf="@+id/textTermNumber"
+                app:layout_constraintTop_toTopOf="@+id/textTermNumber"
+                app:layout_constraintVertical_bias="0.0" />
 
             <View
                 android:id="@+id/backAdditionalAttachments"
-                android:layout_marginStart="13dp"
-                android:layout_marginEnd="13dp"
                 android:layout_width="match_parent"
-                android:layout_height="170dp"
-
+                android:layout_height="180dp"
+                android:layout_marginStart="13dp"
                 android:layout_marginTop="7dp"
+
+                android:layout_marginEnd="13dp"
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
 
@@ -181,124 +222,117 @@
             <TextView
                 android:id="@+id/AdditionalAttachmentsText1"
 
-                app:layout_constraintStart_toStartOf="@+id/backAdditionalAttachments"
-                app:layout_constraintTop_toTopOf="@+id/backAdditionalAttachments"
-                android:layout_marginTop="7dp"
-                android:layout_marginStart="7dp"
-
-                style="@style/TextSecondary"
+                style="@style/TextPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+
+                android:layout_marginTop="7dp"
                 android:text="@string/additionalAttachments"
-                />
+                app:layout_constraintStart_toStartOf="@+id/backAdditionalAttachments"
+                app:layout_constraintTop_toTopOf="@+id/backAdditionalAttachments" />
 
             <EditText
                 android:id="@+id/AdditionalAttachmentsAmount"
 
-                app:layout_constraintStart_toStartOf="@+id/backAdditionalAttachments"
-                app:layout_constraintTop_toBottomOf="@+id/AdditionalAttachmentsText1"
-                android:layout_marginTop="7dp"
-                android:layout_marginStart="7dp"
-
                 style="@style/TextSecondary"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
+                android:layout_marginStart="7dp"
+
+                android:layout_marginTop="7dp"
                 android:background="@drawable/edittext_form"
                 android:cursorVisible="false"
-                android:hint="@string/AmountHint"
+                android:hint="@string/EnterHint1"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:inputType="number"
                 android:maxLength="8"
                 android:textColorHint="@color/white"
                 android:textSize="17sp"
-                />
+                app:layout_constraintStart_toStartOf="@+id/backAdditionalAttachments"
+                app:layout_constraintTop_toBottomOf="@+id/AdditionalAttachmentsText1" />
 
             <Spinner
                 android:id="@+id/AdditionalAttachmentsSpinner1"
 
-                app:layout_constraintBottom_toBottomOf="@+id/AdditionalAttachmentsAmount"
-                app:layout_constraintStart_toEndOf="@+id/AdditionalAttachmentsAmount"
-                app:layout_constraintTop_toTopOf="@+id/AdditionalAttachmentsAmount"
+                style="@style/TextSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginStart="7dp"
 
 
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
                 android:background="@drawable/edittext_form"
                 android:entries="@array/reinvestmentPeriodArray"
                 android:textAlignment="center"
-                style="@style/TextSecondary"
-                />
+                app:layout_constraintBottom_toBottomOf="@+id/AdditionalAttachmentsAmount"
+                app:layout_constraintStart_toEndOf="@+id/AdditionalAttachmentsAmount"
+                app:layout_constraintTop_toTopOf="@+id/AdditionalAttachmentsAmount" />
 
             <TextView
                 android:id="@+id/AdditionalAttachmentsText2"
 
-                app:layout_constraintStart_toStartOf="@+id/backAdditionalAttachments"
-                app:layout_constraintTop_toBottomOf="@+id/AdditionalAttachmentsAmount"
-                android:layout_marginTop="7dp"
-                android:layout_marginStart="7dp"
-
-                style="@style/TextSecondary"
+                style="@style/TextPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+
+                android:layout_marginTop="7dp"
                 android:text="@string/term"
-                 />
+                app:layout_constraintStart_toStartOf="@+id/backAdditionalAttachments"
+                app:layout_constraintTop_toBottomOf="@+id/AdditionalAttachmentsAmount" />
 
             <EditText
                 android:id="@+id/AdditionalAttachmentsTime"
 
-                app:layout_constraintStart_toStartOf="@+id/backAdditionalAttachments"
-                app:layout_constraintTop_toBottomOf="@+id/AdditionalAttachmentsText2"
-                android:layout_marginTop="7dp"
+                style="@style/TextSecondary"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="7dp"
 
-                style="@style/TextSecondary"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
+                android:layout_marginTop="7dp"
                 android:background="@drawable/edittext_form"
                 android:cursorVisible="false"
-                android:hint="Число"
+                android:hint="@string/EnterHint2"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:inputType="number"
-                android:maxLength="8"
+                android:maxLength="3"
                 android:textColorHint="@color/white"
                 android:textSize="17sp"
-                 />
+                app:layout_constraintStart_toStartOf="@+id/backAdditionalAttachments"
+                app:layout_constraintTop_toBottomOf="@+id/AdditionalAttachmentsText2" />
 
             <Spinner
                 android:id="@+id/AdditionalAttachmentsSpinner2"
 
-                app:layout_constraintBottom_toBottomOf="@+id/AdditionalAttachmentsTime"
-                app:layout_constraintStart_toEndOf="@+id/AdditionalAttachmentsTime"
-                app:layout_constraintTop_toTopOf="@+id/AdditionalAttachmentsTime"
-                android:layout_marginStart="7dp"
-
                 style="@style/TextSecondary"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
+                android:layout_marginStart="7dp"
+
                 android:background="@drawable/edittext_form"
                 android:entries="@array/reinvestmentTermArray"
                 android:textAlignment="center"
-                />
+                app:layout_constraintBottom_toBottomOf="@+id/AdditionalAttachmentsTime"
+                app:layout_constraintStart_toEndOf="@+id/AdditionalAttachmentsTime"
+                app:layout_constraintTop_toTopOf="@+id/AdditionalAttachmentsTime" />
 
             <Button
                 android:id="@+id/plusButton"
 
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/backAdditionalAttachments"
-                android:layout_marginStart="13dp"
-                android:layout_marginEnd="13dp"
-                android:layout_marginTop="7dp"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="13dp"
+                android:background="@drawable/edittext_form"
+
                 android:text="+"
                 android:textSize="20sp"
-                android:background="@drawable/edittext_form"
-                />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/backAdditionalAttachments" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
