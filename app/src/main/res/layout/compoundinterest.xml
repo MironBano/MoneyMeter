@@ -128,7 +128,7 @@
                 app:layout_constraintStart_toEndOf="@+id/PercentAmount"
                 app:layout_constraintTop_toTopOf="@+id/PercentAmount"
                 android:layout_marginEnd="13dp"
-                android:layout_marginStart="7dp"/>
+                android:layout_marginStart="13dp"/>
 
 
             <TextView
