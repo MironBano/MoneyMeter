@@ -1,6 +1,9 @@
 package com.firstapp.moneymeter
 
+import android.opengl.Visibility
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.firstapp.moneymeter.databinding.CompoundinterestBinding
@@ -21,25 +24,34 @@ class CompoundInterest: AppCompatActivity() {
             binding.textTermNumber.text = value.toInt().toString() + " лет"
         }
 
-        fun onStart() {
-            super.onStart()
+        binding.plusButton.setOnClickListener{
+            showAddAtt()
         }
+    }
 
-        fun onResume() {
-            super.onResume()
+    override fun onStart() {
+        super.onStart()
+    }
+
+    override fun onResume() {
+        super.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+    }
+
+    override fun onStop() {
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    }
+
+    private fun showAddAtt(){
+        with(binding){
+            group2.visibility = View.VISIBLE
         }
-
-        fun onPause() {
-            super.onPause()
-        }
-
-        fun onStop() {
-            super.onStop()
-        }
-
-        fun onDestroy() {
-            super.onDestroy()
-        }
-
     }
 }
