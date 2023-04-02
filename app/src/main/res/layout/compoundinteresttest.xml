@@ -171,7 +171,7 @@
                 android:id="@+id/textTermNumber"
 
                 style="@style/TextPrimary"
-                android:layout_width="96dp"
+                android:layout_width="85dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="7dp"
                 android:layout_marginEnd="13dp"
@@ -227,7 +227,7 @@
                 android:id="@+id/textRateNumber"
 
                 style="@style/TextPrimary"
-                android:layout_width="wrap_content"
+                android:layout_width="70dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="7dp"
                 android:background="@drawable/edittext_form"
