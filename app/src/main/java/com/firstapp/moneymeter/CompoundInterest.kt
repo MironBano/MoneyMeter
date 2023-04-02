@@ -20,9 +20,16 @@ class CompoundInterest: AppCompatActivity() {
         binding = CompoundinteresttestBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.group2.visibility = View.GONE
+
         binding.termSlider.addOnChangeListener { slider, value, fromUser ->
             binding.textTermNumber.text = value.toInt().toString() + " лет"
         }
+
+        binding.rateSlider.addOnChangeListener { slider, value, fromUser ->
+            binding.textRateNumber.text = value.toInt().toString() + " %"
+        }
+
 
         binding.plusButton.setOnClickListener{
             showAddAtt()
@@ -50,6 +57,7 @@ class CompoundInterest: AppCompatActivity() {
     }
 
     private fun showAddAtt(){
+
         with(binding){
             group2.visibility = View.VISIBLE
         }
