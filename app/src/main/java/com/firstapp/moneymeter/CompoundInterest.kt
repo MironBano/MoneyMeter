@@ -21,6 +21,7 @@ class CompoundInterest: AppCompatActivity() {
         setContentView(binding.root)
 
         binding.group2.visibility = View.GONE
+        binding.group3.visibility = View.GONE
 
         binding.termSlider.addOnChangeListener { slider, value, fromUser ->
             binding.textTermNumber.text = value.toInt().toString() + " лет"
@@ -31,7 +32,7 @@ class CompoundInterest: AppCompatActivity() {
         }
 
 
-        binding.plusButton.setOnClickListener{
+        binding.plusButton.setOnClickListener {
             showAddAtt()
         }
     }
@@ -56,10 +57,13 @@ class CompoundInterest: AppCompatActivity() {
         super.onDestroy()
     }
 
-    private fun showAddAtt(){
+    private fun showAddAtt() {
+        when{
+          //groupN необходимо ставить в порядке убывания N
 
-        with(binding){
-            group2.visibility = View.VISIBLE
+            binding.group2.visibility === View.VISIBLE -> binding.group3.visibility = View.VISIBLE
+            binding.group1.visibility === View.VISIBLE -> binding.group2.visibility = View.VISIBLE
         }
     }
+
 }

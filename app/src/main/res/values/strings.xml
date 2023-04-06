@@ -14,7 +14,6 @@
         <item>Раз в квартал</item>
         <item>Раз в 2 квартала</item>
         <item>Раз в год</item>
-        <item>Своё</item>
     </string-array>
     <string-array name="reinvestmentTermArray">
         <item>Месяц</item>

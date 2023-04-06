@@ -39,7 +39,7 @@
 
             <Button
                 style="@style/TextView"
-                android:text="ХУЙ"
+                android:text="BRUH"
                 />
         </LinearLayout>
 
