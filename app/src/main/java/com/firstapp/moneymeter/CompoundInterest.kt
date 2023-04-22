@@ -2,10 +2,12 @@ package com.firstapp.moneymeter
 
 import android.opengl.Visibility
 import android.os.Bundle
+import android.text.TextWatcher
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.addTextChangedListener
 import com.firstapp.moneymeter.databinding.CompoundinterestBinding
 import com.firstapp.moneymeter.databinding.CompoundinteresttestBinding
 import com.google.android.material.slider.Slider
@@ -31,10 +33,14 @@ class CompoundInterest: AppCompatActivity() {
             binding.textRateNumber.text = value.toInt().toString() + " %"
         }
 
-
         binding.plusButton.setOnClickListener {
             showAddAtt()
         }
+
+        binding.calcButton.setOnClickListener{
+            analiticsChanger()
+        }
+
     }
 
     override fun onStart() {
@@ -65,5 +71,10 @@ class CompoundInterest: AppCompatActivity() {
             binding.group1.visibility === View.VISIBLE -> binding.group2.visibility = View.VISIBLE
         }
     }
+
+    private fun analiticsChanger() {
+        binding.startAmountText.setText(binding.InitAmount.getText().toString())
+    }
+
 
 }

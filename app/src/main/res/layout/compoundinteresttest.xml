@@ -607,12 +607,156 @@
                 app:layout_constraintTop_toBottomOf="@id/plusButton"
                 android:layout_marginTop="13dp"
 
+                android:gravity="center"
                 android:background="@color/yellow"
                 android:textColor="@color/black"
                 android:text="@string/analitics"
                 style="@style/TextPrimary"
-                android:textAlignment="center"
                 />
+
+            <View
+                android:id="@+id/backAnal"
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="13dp"
+                android:background="@drawable/additional_attachments_form"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/analitics"
+                app:layout_constraintStart_toStartOf="@id/mainBarrier"
+                />
+
+            <TextView
+                android:id="@+id/resultText"
+
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+
+                android:layout_marginTop="13dp"
+                android:text="Итоговая сумма:"
+                app:layout_constraintStart_toStartOf="@id/backAnal"
+                app:layout_constraintTop_toTopOf="@id/backAnal"
+                />
+
+            <TextView
+
+                android:id="@+id/totalAmount"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="13dp"
+                android:text="312331"
+                app:layout_constraintBottom_toBottomOf="@+id/resultText"
+                app:layout_constraintStart_toEndOf="@id/resultText"
+                app:layout_constraintTop_toTopOf="@+id/resultText" />
+
+
+
+            <TextView
+                android:id="@+id/attachmentsText"
+
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+
+                android:layout_marginTop="13dp"
+                android:text="Доход:"
+                app:layout_constraintStart_toStartOf="@id/backAnal"
+                app:layout_constraintTop_toBottomOf="@id/resultText"
+                />
+
+            <TextView
+                android:id="@+id/inconeText"
+
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+
+                android:text="312331"
+                app:layout_constraintBottom_toBottomOf="@+id/attachmentsText"
+                app:layout_constraintStart_toEndOf="@+id/attachmentsText"
+                app:layout_constraintTop_toTopOf="@+id/attachmentsText" />
+
+            <TextView
+                android:id="@+id/aditionAttachmentsText"
+
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+
+                android:layout_marginTop="13dp"
+                android:text="Сумма всех пополнений:"
+                app:layout_constraintStart_toStartOf="@id/backAnal"
+                app:layout_constraintTop_toBottomOf="@id/attachmentsText"
+                />
+
+            <TextView
+                android:id="@+id/totalAttachmentsText"
+
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+
+                android:text="312331"
+                app:layout_constraintBottom_toBottomOf="@+id/aditionAttachmentsText"
+                app:layout_constraintStart_toEndOf="@+id/aditionAttachmentsText"
+                app:layout_constraintTop_toTopOf="@+id/aditionAttachmentsText" />
+
+            <TextView
+                android:id="@+id/startAmount"
+
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="13dp"
+
+                android:text="Начальная сумма:"
+                app:layout_constraintStart_toStartOf="@id/backAnal"
+                app:layout_constraintTop_toBottomOf="@+id/aditionAttachmentsText" />
+
+            <TextView
+                android:id="@+id/startAmountText"
+
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="7dp"
+
+                android:text="1"
+                app:layout_constraintBottom_toBottomOf="@+id/startAmount"
+                app:layout_constraintStart_toEndOf="@+id/startAmount"
+                app:layout_constraintTop_toBottomOf="@+id/aditionAttachmentsText" />
+
+            <Button
+                android:textColor="@color/black"
+                style="@style/TextPrimary"
+                android:id="@+id/calcButton"
+
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="13dp"
+
+                android:layout_marginEnd="13dp"
+                android:text="Рассчитать"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/backAnal"
+                />
+
+
 
 
 
