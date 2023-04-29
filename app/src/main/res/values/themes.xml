@@ -13,6 +13,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="colorOnBackground">@color/dark_grey</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
     </style>
@@ -50,6 +51,15 @@
         <item name="android:textColorHint">@color/bright_grey</item>
         <item name="android:gravity">center</item>
         <item name="android:fontFamily">@font/montserrat_regular</item>
+    </style>
+
+    <style name="ButtonPrimary"> <!-- Selected Button -->
+        <item name="android:background">@color/dark_grey</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/bright_grey</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+
     </style>
 
 </resources>

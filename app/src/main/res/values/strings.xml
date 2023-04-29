@@ -26,4 +26,8 @@
     <string name="term">Срок</string>
     <string name="cross">×</string>
     <string name="analitics">Аналитика</string>
+    <string name="expectedInflation">Ожидаемая инфляция</string>
+    <string name="expectedDeflation">Ожидаемая дефляция</string>
+    <string name="inflation">Инфляция</string>
+    <string name="deflation">Дефляция</string>
 </resources>
