@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
-import com.firstapp.moneymeter.databinding.CompoundinterestBinding
 import com.firstapp.moneymeter.databinding.CompoundinteresttestBinding
 import com.google.android.material.slider.Slider
 
@@ -73,7 +72,7 @@ class CompoundInterest: AppCompatActivity() {
     }
 
     private fun analiticsChanger() {
-        binding.startAmountText.setText(binding.InitAmount.getText().toString())
+        binding.startAmountText.text = binding.InitAmount.text.toString()
     }
 
 

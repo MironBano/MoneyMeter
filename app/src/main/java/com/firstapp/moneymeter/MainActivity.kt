@@ -6,7 +6,6 @@ import android.os.Bundle
 import com.firstapp.moneymeter.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
     lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,6 +13,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.compoundInterestButton.setOnClickListener{
             val intent = Intent(this@MainActivity, CompoundInterest::class.java)
+            startActivity(intent)
+        }
+
+        binding.inflationButton.setOnClickListener{
+            val intent = Intent(this@MainActivity, Inflation::class.java)
             startActivity(intent)
         }
     }

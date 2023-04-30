@@ -33,9 +33,9 @@
                 />
 
             <Button
-                android:id="@+id/But2"
+                android:id="@+id/inflationButton"
                 style="@style/TextView"
-                android:text="Inflation"
+                android:text="@string/inflation"
                 />
 
             <Button

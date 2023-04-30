@@ -10,15 +10,15 @@
 
     <ScrollView
         android:id="@+id/InflationScroll"
-        android:background="@color/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/MainConst"
@@ -28,34 +28,32 @@
 
 
             <Button
-                android:background="@drawable/back_with_arrow"
-
-
                 android:id="@+id/inflationButton"
+
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="52dp"
                 android:layout_marginTop="13dp"
+                android:background="@drawable/back_selected_button"
                 android:text="@string/inflation"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="MissingConstraints"
-                />
+                tools:ignore="MissingConstraints" />
 
             <Button
-                android:background="@drawable/edittext_form"
-                android:alpha="0.5"
-
                 android:id="@+id/deflationButton"
                 android:layout_width="wrap_content"
+
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="52dp"
                 android:layout_marginTop="13dp"
+                android:layout_marginEnd="52dp"
+                android:alpha="0.5"
+                android:background="@drawable/edittext_form"
                 android:text="@string/deflation"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="MissingConstraints"
-                />
+                tools:ignore="MissingConstraints" />
 
 
             <View
@@ -72,8 +70,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:barrierDirection="end"
-                app:constraint_referenced_ids="StartPoint"
-                />
+                app:constraint_referenced_ids="StartPoint" />
 
             <View
                 android:id="@+id/back1"
@@ -81,13 +78,12 @@
                 android:layout_height="100dp"
 
                 android:layout_marginStart="13dp"
-                android:layout_marginEnd="13dp"
                 android:layout_marginTop="13dp"
+                android:layout_marginEnd="13dp"
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/mainBarrier"
-                app:layout_constraintTop_toBottomOf="@+id/inflationButton"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/inflationButton" />
 
             <TextView
                 android:id="@+id/text1"
@@ -98,8 +94,7 @@
                 android:text="@string/initialAmount"
 
                 app:layout_constraintStart_toEndOf="@id/mainBarrier"
-                app:layout_constraintTop_toTopOf="@id/back1"
-                />
+                app:layout_constraintTop_toTopOf="@id/back1" />
 
             <EditText
                 android:id="@+id/InitAmount"
@@ -121,8 +116,7 @@
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="@+id/back1"
                 app:layout_constraintStart_toEndOf="@id/mainBarrier"
-                app:layout_constraintTop_toBottomOf="@id/text1"
-                />
+                app:layout_constraintTop_toBottomOf="@id/text1" />
 
 
             <View
@@ -135,8 +129,7 @@
                 android:layout_marginEnd="13dp"
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/back1"
-                />
+                app:layout_constraintTop_toBottomOf="@id/back1" />
 
             <TextView
                 android:id="@+id/amountText"
@@ -146,8 +139,7 @@
                 android:text="@string/term"
 
                 app:layout_constraintStart_toEndOf="@id/mainBarrier"
-                app:layout_constraintTop_toTopOf="@id/back2"
-                />
+                app:layout_constraintTop_toTopOf="@id/back2" />
 
 
             <com.google.android.material.slider.Slider
@@ -163,8 +155,7 @@
                 app:labelBehavior="gone"
 
                 app:layout_constraintStart_toStartOf="@+id/amountText"
-                app:layout_constraintTop_toBottomOf="@+id/amountText"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/amountText" />
 
             <TextView
                 android:id="@+id/textTermNumber"
@@ -181,8 +172,7 @@
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/termSlider"
                 app:layout_constraintEnd_toEndOf="@+id/back2"
-                app:layout_constraintTop_toTopOf="@+id/termSlider"
-                />
+                app:layout_constraintTop_toTopOf="@+id/termSlider" />
 
             <View
                 android:id="@+id/back3"
@@ -194,8 +184,7 @@
                 android:layout_marginEnd="13dp"
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/back2"
-                />
+                app:layout_constraintTop_toBottomOf="@id/back2" />
 
             <TextView
                 android:id="@+id/rateText"
@@ -205,8 +194,7 @@
                 android:text="@string/expectedInflation"
 
                 app:layout_constraintStart_toEndOf="@id/mainBarrier"
-                app:layout_constraintTop_toTopOf="@id/back3"
-                />
+                app:layout_constraintTop_toTopOf="@id/back3" />
 
             <com.google.android.material.slider.Slider
                 android:id="@+id/rateSlider"
@@ -220,8 +208,7 @@
                 app:haloColor="@color/transparent"
                 app:labelBehavior="gone"
                 app:layout_constraintStart_toStartOf="@id/rateText"
-                app:layout_constraintTop_toBottomOf="@id/rateText"
-                />
+                app:layout_constraintTop_toBottomOf="@id/rateText" />
 
             <TextView
                 android:id="@+id/textRateNumber"
@@ -238,8 +225,7 @@
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/rateSlider"
                 app:layout_constraintEnd_toEndOf="@id/back3"
-                app:layout_constraintTop_toTopOf="@id/rateSlider"
-                />
+                app:layout_constraintTop_toTopOf="@id/rateSlider" />
 
             <Button
                 android:id="@+id/calcButton"
@@ -257,29 +243,58 @@
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/back3"
-                />
+                app:layout_constraintTop_toBottomOf="@id/back3" />
 
             <View
-
                 android:id="@+id/back4"
+
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-
                 android:layout_marginStart="13dp"
+
                 android:layout_marginTop="13dp"
                 android:layout_marginEnd="13dp"
                 android:background="@drawable/back_with_arrow"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/calcButton"
+                app:layout_constraintTop_toBottomOf="@id/calcButton" />
+
+            <TextView
+                android:id="@+id/startAmount"
+                style="@style/TextPrimary"
+                android:layout_width="120dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/edittext_form"
+
+                android:gravity="center"
+                android:text="999999999"
+                app:layout_constraintStart_toStartOf="@+id/back4"
+                app:layout_constraintTop_toTopOf="@+id/back4"
+
                 />
+
+            <TextView
+                android:id="@+id/endAmount"
+                style="@style/TextPrimary"
+                android:background="@drawable/edittext_form"
+                android:layout_width="120dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="20dp"
+
+                android:gravity="center"
+                android:text="999999999"
+                app:layout_constraintEnd_toEndOf="@+id/back4"
+                app:layout_constraintTop_toTopOf="@+id/back4"
+
+                />
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
