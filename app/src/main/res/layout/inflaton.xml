@@ -204,7 +204,7 @@
                 android:layout_marginEnd="105dp"
 
                 android:valueFrom="1"
-                android:valueTo="50"
+                android:valueTo="30"
                 app:haloColor="@color/transparent"
                 app:labelBehavior="gone"
                 app:layout_constraintStart_toStartOf="@id/rateText"
@@ -268,7 +268,7 @@
                 android:background="@drawable/edittext_form"
 
                 android:gravity="center"
-                android:text="999999999"
+                android:text="Начальная сумма"
                 app:layout_constraintStart_toStartOf="@+id/back4"
                 app:layout_constraintTop_toTopOf="@+id/back4"
 
@@ -284,7 +284,7 @@
                 android:layout_marginEnd="20dp"
 
                 android:gravity="center"
-                android:text="999999999"
+                android:text="Конечная сумма"
                 app:layout_constraintEnd_toEndOf="@+id/back4"
                 app:layout_constraintTop_toTopOf="@+id/back4"
 
