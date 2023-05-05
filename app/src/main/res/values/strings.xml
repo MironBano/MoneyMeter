@@ -31,4 +31,7 @@
     <string name="expectedDeflation">Ожидаемая дефляция</string>
     <string name="inflation">Инфляция</string>
     <string name="deflation">Дефляция</string>
+    <string name="tax">Налоги</string>
+    <string name="taxRate">Налоговая ставка</string>
+    <string name="taxButtontext">Вычитать из прибыли</string>
 </resources>

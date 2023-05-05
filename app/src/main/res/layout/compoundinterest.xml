@@ -25,7 +25,7 @@
         />
 
     <EditText
-        android:id="@+id/rateAmount"
+        android:id="@+id/startAmount"
         style="@style/TextSecondary"
         android:layout_width="120dp"
         android:layout_height="48dp"
@@ -42,7 +42,7 @@
         app:layout_constraintTop_toTopOf="@+id/back1" />
 
     <EditText
-        android:id="@+id/startAmount"
+        android:id="@+id/rateAmount"
         style="@style/TextSecondary"
         android:layout_width="70dp"
         android:layout_height="48dp"
@@ -57,9 +57,29 @@
         android:inputType="number"
         android:maxLength="2"
         app:layout_constraintEnd_toStartOf="@+id/endAmount"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/rateAmount"
-        app:layout_constraintTop_toTopOf="@+id/back1" />
+        app:layout_constraintStart_toEndOf="@+id/startAmount"
+        app:layout_constraintTop_toTopOf="@+id/back1"
+        />
+
+    <EditText
+        android:id="@+id/termAmount"
+        style="@style/TextSecondary"
+        android:layout_width="70dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="13dp"
+
+        android:cursorVisible="true"
+        android:hint="@string/EnterHint3"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:maxLength="2"
+        app:layout_constraintBottom_toBottomOf="@+id/back1"
+        app:layout_constraintEnd_toStartOf="@+id/endAmount"
+        app:layout_constraintStart_toEndOf="@+id/startAmount"
+         />
 
     <EditText
         android:id="@+id/endAmount"
