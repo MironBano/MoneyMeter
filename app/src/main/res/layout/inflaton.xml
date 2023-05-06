@@ -29,17 +29,16 @@
 
             <Button
                 android:id="@+id/inflationButton"
-
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="52dp"
                 android:layout_marginTop="13dp"
-                android:background="@drawable/back_selected_button"
+
+                android:background="@drawable/selected_button"
                 android:text="@string/inflation"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="MissingConstraints" />
+                />
 
             <Button
                 android:id="@+id/deflationButton"
@@ -254,19 +253,31 @@
 
                 android:layout_marginTop="13dp"
                 android:layout_marginEnd="13dp"
-                android:background="@drawable/back_with_arrow"
+                android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/calcButton" />
+                app:layout_constraintTop_toBottomOf="@id/calcButton"
+                />
+
+            <View
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:background="@drawable/strelka"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="7dp"
+                app:layout_constraintBottom_toBottomOf="@+id/back4"
+                app:layout_constraintEnd_toStartOf="@+id/endAmount"
+                app:layout_constraintStart_toEndOf="@+id/startAmount"
+                app:layout_constraintTop_toTopOf="@+id/back4"
+                />
 
             <TextView
                 android:id="@+id/startAmount"
                 style="@style/TextPrimary"
                 android:layout_width="120dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="24dp"
                 android:background="@drawable/edittext_form"
-
                 android:gravity="center"
                 android:text="Начальная сумма"
                 app:layout_constraintStart_toStartOf="@+id/back4"
@@ -281,7 +292,7 @@
                 android:layout_width="120dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="25dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="10dp"
 
                 android:gravity="center"
                 android:text="Конечная сумма"
