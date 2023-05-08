@@ -72,53 +72,6 @@
                 app:constraint_referenced_ids="StartPoint" />
 
             <View
-                android:id="@+id/back1"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-
-                android:layout_marginStart="13dp"
-                android:layout_marginTop="13dp"
-                android:layout_marginEnd="13dp"
-                android:background="@drawable/additional_attachments_form"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
-                app:layout_constraintTop_toBottomOf="@+id/inflationButton" />
-
-            <TextView
-                android:id="@+id/text1"
-
-                style="@style/TextPrimary"
-                android:layout_marginStart="13dp"
-                android:layout_marginTop="7dp"
-                android:text="@string/initialAmount"
-
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
-                app:layout_constraintTop_toTopOf="@id/back1" />
-
-            <EditText
-                android:id="@+id/InitAmount"
-
-                style="@style/TextSecondary"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginStart="26dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginEnd="26dp"
-                android:background="@drawable/edittext_form"
-
-                android:cursorVisible="true"
-                android:hint="@string/EnterHint1"
-                android:imeOptions="actionDone"
-                android:importantForAutofill="no"
-                android:inputType="number"
-                android:maxLength="14"
-                android:textSize="17sp"
-                app:layout_constraintEnd_toEndOf="@+id/back1"
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
-                app:layout_constraintTop_toBottomOf="@id/text1" />
-
-
-            <View
                 android:id="@+id/back2"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -245,45 +198,50 @@
                 app:layout_constraintTop_toBottomOf="@id/back3" />
 
             <View
-                android:id="@+id/back4"
+                android:id="@+id/back1"
 
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginStart="13dp"
-
-                android:layout_marginTop="13dp"
                 android:layout_marginEnd="13dp"
+                android:layout_marginTop="13dp"
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/calcButton"
+                app:layout_constraintStart_toEndOf="@id/mainBarrier"
+                app:layout_constraintTop_toBottomOf="@+id/inflationButton"
+
                 />
 
             <View
                 android:layout_width="60dp"
                 android:layout_height="30dp"
-                android:background="@drawable/strelka"
-                android:layout_marginStart="7dp"
                 android:layout_marginEnd="7dp"
-                app:layout_constraintBottom_toBottomOf="@+id/back4"
+                android:background="@drawable/strelka"
+                app:layout_constraintBottom_toBottomOf="@+id/back1"
                 app:layout_constraintEnd_toStartOf="@+id/endAmount"
                 app:layout_constraintStart_toEndOf="@+id/startAmount"
-                app:layout_constraintTop_toTopOf="@+id/back4"
-                />
+                app:layout_constraintTop_toTopOf="@+id/back1" />
 
-            <TextView
+
+            <EditText
                 android:id="@+id/startAmount"
-                style="@style/TextPrimary"
+                style="@style/TextSecondary"
                 android:layout_width="120dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="24dp"
-                android:background="@drawable/edittext_form"
-                android:gravity="center"
-                android:text="Начальная сумма"
-                app:layout_constraintStart_toStartOf="@+id/back4"
-                app:layout_constraintTop_toTopOf="@+id/back4"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="26dp"
 
-                />
+                android:background="@drawable/edittext_form"
+                android:cursorVisible="true"
+                android:hint="@string/EnterHint1"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="14"
+
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="@+id/back1"
+                app:layout_constraintTop_toTopOf="@+id/back1" />
 
             <TextView
                 android:id="@+id/endAmount"
@@ -292,12 +250,12 @@
                 android:layout_width="120dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="25dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginEnd="26dp"
 
                 android:gravity="center"
-                android:text="Конечная сумма"
-                app:layout_constraintEnd_toEndOf="@+id/back4"
-                app:layout_constraintTop_toTopOf="@+id/back4"
+                android:text="@string/endAmount"
+                app:layout_constraintEnd_toEndOf="@+id/back1"
+                app:layout_constraintTop_toTopOf="@+id/back1"
 
                 />
 

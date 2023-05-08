@@ -12,7 +12,7 @@
     <View
         android:id="@+id/back1"
 
-        android:background="@drawable/back_with_arrow"
+        android:background="@drawable/additional_attachments_form"
         android:layout_width="match_parent"
         android:layout_height="200dp"
 
@@ -24,10 +24,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
 
+    <View
+        android:id="@+id/arrow"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:background="@drawable/strelka"
+
+        app:layout_constraintBottom_toTopOf="@+id/termAmount"
+        app:layout_constraintEnd_toStartOf="@+id/endAmount"
+        app:layout_constraintStart_toEndOf="@+id/startAmount"
+        app:layout_constraintTop_toBottomOf="@+id/rateAmount" />
+
     <EditText
         android:id="@+id/startAmount"
         style="@style/TextSecondary"
-        android:layout_width="120dp"
+        android:layout_width="110dp"
         android:layout_height="48dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="76dp"
@@ -71,7 +82,7 @@
         android:layout_marginBottom="13dp"
 
         android:cursorVisible="true"
-        android:hint="@string/EnterHint3"
+        android:hint="@string/EnterHint4"
         android:imeOptions="actionDone"
         android:importantForAutofill="no"
         android:inputType="number"
@@ -81,19 +92,16 @@
         app:layout_constraintStart_toEndOf="@+id/startAmount"
          />
 
-    <EditText
+    <TextView
         android:id="@+id/endAmount"
         style="@style/TextSecondary"
-        android:cursorVisible="true"
-        android:hint="@string/EnterHint1"
-        android:imeOptions="actionDone"
-        android:importantForAutofill="no"
-        android:inputType="number"
-        android:maxLength="8"
-        android:layout_width="120dp"
+        android:layout_width="110dp"
         android:layout_height="48dp"
         android:layout_marginEnd="13dp"
         android:layout_marginTop="76dp"
+
+        android:textColor="@color/bright_grey"
+        android:text="@string/endAmount"
         android:background="@drawable/edittext_form"
         app:layout_constraintEnd_toEndOf="@+id/back1"
         app:layout_constraintTop_toTopOf="@+id/back1"
@@ -116,5 +124,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/back1" />
+
+    <Button
+        android:id="@+id/expandButton"
+        style="@style/TextPrimary"
+        android:layout_width="match_parent"
+
+        android:layout_height="0dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="13dp"
+
+        android:background="@drawable/edittext_form"
+        android:text="Расширенный"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calcButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

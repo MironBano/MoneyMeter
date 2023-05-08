@@ -23,6 +23,7 @@
         </activity>
         <activity android:name="com.firstapp.moneymeter.CompoundInterest" />
         <activity android:name=".Inflation"/>
+        <activity android:name=".CompoundInteresttest"/>
     </application>
 
 </manifest>

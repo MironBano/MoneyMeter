@@ -2,6 +2,7 @@
     <string name="app_name">MoneyMeter</string>
     <string name="CIButton">Сложный процент</string>
     <string name="initialAmount">Начальная сумма</string>
+    <string name="endAmount">Результат</string>
     <string name="rate">Ставка</string>
     <string name="AmountHint">Сумма</string>
     <string name="initialAmountHint">Введите число</string>
@@ -10,6 +11,7 @@
     <string name="EnterHint1">100 000 ₽</string>
     <string name="EnterHint2">10</string>
     <string name="EnterHint3">10 %</string>
+    <string name="EnterHint4">15 лет</string>
     <string-array name="reinvestmentPeriodArray">
         <item>Раз в месяц</item>
         <item>Раз в квартал</item>

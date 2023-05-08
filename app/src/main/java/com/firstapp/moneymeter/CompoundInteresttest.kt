@@ -1,15 +1,21 @@
 package com.firstapp.moneymeter
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.firstapp.moneymeter.databinding.InflatonBinding
+import com.firstapp.moneymeter.databinding.CompoundinteresttestBinding
 
-class Inflation: AppCompatActivity() {
-    lateinit var binding: InflatonBinding
+class CompoundInteresttest: AppCompatActivity() {
+
+    lateinit var binding: CompoundinteresttestBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
-        binding = InflatonBinding.inflate(layoutInflater)
+        binding = CompoundinteresttestBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.group2.visibility = View.GONE
+        binding.group3.visibility = View.GONE
 
         binding.termSlider.addOnChangeListener { slider, value, fromUser ->
             binding.textTermNumber.text = value.toInt().toString() + " лет"
@@ -19,8 +25,12 @@ class Inflation: AppCompatActivity() {
             binding.textRateNumber.text = value.toInt().toString() + " %"
         }
 
+        binding.plusButton.setOnClickListener {
+            showAddAtt()
+        }
+
         binding.calcButton.setOnClickListener{
-            amountChanger()
+            analiticsChanger()
         }
 
     }
@@ -45,16 +55,18 @@ class Inflation: AppCompatActivity() {
         super.onDestroy()
     }
 
-    private fun amountChanger(){
+    private fun showAddAtt() {
+        when{
+            //groupN необходимо ставить в порядке убывания N
 
-        val startAm:Int = binding.startAmount.text.toString().toInt()
-        val term:Int = binding.textTermNumber.text.removeSuffix(" лет").toString().toInt()
-        val rate:Int = binding.textRateNumber.text.removeSuffix(" %").toString().toInt()
-        var endAm:Float = startAm.toFloat()
-        for(i in 1..term){
-            endAm -= (endAm / 100) * rate
+            binding.group2.visibility === View.VISIBLE -> binding.group3.visibility = View.VISIBLE
+            binding.group1.visibility === View.VISIBLE -> binding.group2.visibility = View.VISIBLE
         }
-        binding.endAmount.text = endAm.toInt().toString()
     }
+
+    private fun analiticsChanger() {
+        binding.startAmountText.text = binding.InitAmount.text.toString()
+    }
+
 
 }
