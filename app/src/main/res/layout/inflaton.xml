@@ -27,7 +27,7 @@
             android:layout_height="wrap_content">
 
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/inflationButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/deflationButton"
                 android:layout_width="wrap_content"
 
@@ -213,9 +213,9 @@
                 />
 
             <View
-                android:layout_width="60dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="7dp"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="0dp"
                 android:background="@drawable/strelka"
                 app:layout_constraintBottom_toBottomOf="@+id/back1"
                 app:layout_constraintEnd_toStartOf="@+id/endAmount"
@@ -237,7 +237,7 @@
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:inputType="number"
-                android:maxLength="14"
+                android:maxLength="15"
 
                 android:textSize="17sp"
                 app:layout_constraintStart_toStartOf="@+id/back1"
@@ -247,7 +247,7 @@
                 android:id="@+id/endAmount"
                 style="@style/TextPrimary"
                 android:background="@drawable/edittext_form"
-                android:layout_width="120dp"
+                android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="26dp"
