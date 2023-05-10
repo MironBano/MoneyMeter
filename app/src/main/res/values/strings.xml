@@ -23,7 +23,6 @@
         <item>Квартал</item>
         <item>2 квартала</item>
         <item>Год</item>
-        <item>Своё</item>
     </string-array>
     <string name="additionalAttachments">Дополнительные вложения</string>
     <string name="term">Срок</string>

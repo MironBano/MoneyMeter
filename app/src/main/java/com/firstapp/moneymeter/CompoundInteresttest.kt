@@ -33,6 +33,13 @@ class CompoundInteresttest: AppCompatActivity() {
             analiticsChanger()
         }
 
+        binding.cross2.setOnClickListener{
+            binding.group2.visibility = View.GONE
+        }
+
+        binding.cross3.setOnClickListener{
+            binding.group3.visibility = View.GONE
+        }
     }
 
     override fun onStart() {
@@ -67,6 +74,5 @@ class CompoundInteresttest: AppCompatActivity() {
     private fun analiticsChanger() {
         binding.startAmountText.text = binding.InitAmount.text.toString()
     }
-
 
 }

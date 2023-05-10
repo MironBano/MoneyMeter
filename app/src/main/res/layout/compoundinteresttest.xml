@@ -275,7 +275,8 @@
                 android:layout_width="150dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="7dp"
-                android:background="@drawable/selected_button"
+                android:background="@drawable/select_button"
+                android:focusable="true"
 
                 android:text="@string/taxButtontext"
                 android:textSize="10dp"
@@ -447,6 +448,7 @@
                 />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cross2"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginEnd="13dp"
@@ -545,7 +547,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="visible"
-                app:constraint_referenced_ids="backAdditionalAttachments2,AdditionalAttachments2Text1,AdditionalAttachments2Amount,AdditionalAttachments2Spinner1,AdditionalAttachments2Text2,AdditionalAttachments2Time,AdditionalAttachments2Spinner2" />
+                app:constraint_referenced_ids="backAdditionalAttachments2,AdditionalAttachments2Text1,AdditionalAttachments2Amount,AdditionalAttachments2Spinner1,AdditionalAttachments2Text2,AdditionalAttachments2Time,AdditionalAttachments2Spinner2,cross2" />
 
             <View
                 android:id="@+id/backAdditionalAttachments3"
@@ -572,7 +574,19 @@
                 android:layout_marginTop="7dp"
                 android:text="@string/additionalAttachments"
                 app:layout_constraintStart_toStartOf="@+id/backAdditionalAttachments3"
-                app:layout_constraintTop_toTopOf="@+id/backAdditionalAttachments3" />
+                app:layout_constraintTop_toTopOf="@+id/backAdditionalAttachments3"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cross3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="13dp"
+                android:background="@drawable/cross"
+
+                app:layout_constraintBottom_toBottomOf="@+id/AdditionalAttachments3Text1"
+                app:layout_constraintEnd_toEndOf="@+id/backAdditionalAttachments3"
+                app:layout_constraintTop_toTopOf="@+id/AdditionalAttachments3Text1" />
 
             <EditText
                 android:id="@+id/AdditionalAttachments3Amount"
@@ -663,7 +677,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="visible"
-                app:constraint_referenced_ids="backAdditionalAttachments3,AdditionalAttachments3Text1,AdditionalAttachments3Amount,AdditionalAttachments3Spinner1,AdditionalAttachments3Text2,AdditionalAttachments3Time,AdditionalAttachments3Spinner2" />
+                app:constraint_referenced_ids="backAdditionalAttachments3,AdditionalAttachments3Text1,AdditionalAttachments3Amount,AdditionalAttachments3Spinner1,AdditionalAttachments3Text2,AdditionalAttachments3Time,AdditionalAttachments3Spinner2,cross3" />
 
             <Button
                 android:id="@+id/plusButton"
