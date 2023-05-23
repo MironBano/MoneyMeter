@@ -35,4 +35,5 @@
     <string name="tax">Налоги</string>
     <string name="taxRate">Налоговая ставка</string>
     <string name="taxButtontext">Вычитать из прибыли</string>
+    <string name="reinvestment">Реинвестирование</string>
 </resources>

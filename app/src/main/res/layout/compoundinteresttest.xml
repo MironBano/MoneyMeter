@@ -243,61 +243,37 @@
                 android:layout_marginStart="13dp"
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/back4"
+                app:layout_constraintTop_toBottomOf="@id/backWithSwitch"
                 app:layout_constraintStart_toEndOf="@id/mainBarrier"
                 />
 
-            <TextView
-                android:id="@+id/taxText"
-                style="@style/TextPrimary"
-
-                android:layout_marginStart="13dp"
-                android:layout_marginTop="7dp"
-                android:text="@string/tax"
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
-                app:layout_constraintTop_toTopOf="@+id/backN" />
 
             <TextView
                 android:id="@+id/taxRateText"
                 style="@style/TextPrimary"
 
+                android:layout_marginStart="13dp"
                 android:layout_marginTop="7dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginStart="26dp"
                 android:text="@string/taxRate"
-                app:layout_constraintEnd_toEndOf="@+id/backN"
-                app:layout_constraintStart_toEndOf="@+id/taxOrNotButton"
+
+                app:layout_constraintStart_toStartOf="@+id/backN"
                 app:layout_constraintTop_toTopOf="@+id/backN" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/taxOrNotButton"
-                style="@style/TextSecondary"
-                android:layout_width="150dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="7dp"
-                android:background="@drawable/select_button"
-                android:focusable="true"
-
-                android:text="@string/taxButtontext"
-                android:textSize="10dp"
-                app:layout_constraintStart_toStartOf="@+id/taxText"
-                app:layout_constraintTop_toBottomOf="@id/taxText" />
 
             <EditText
                 android:id="@+id/taxRate"
 
                 style="@style/TextSecondary"
-                android:layout_width="48dp"
+                android:layout_width="70dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="7dp"
 
                 android:background="@drawable/edittext_form"
                 android:cursorVisible="true"
-                android:hint="@string/EnterHint2"
+                android:hint="@string/EnterHint3"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:inputType="number"
-                android:maxLength="2"
+                android:maxLength="3"
                 android:textSize="17sp"
                 app:layout_constraintStart_toStartOf="@+id/taxRateText"
                 app:layout_constraintTop_toBottomOf="@+id/taxRateText" />
@@ -851,9 +827,98 @@
                 app:layout_constraintTop_toBottomOf="@id/backAnal"
                 />
 
+            <View
+                android:id="@+id/backWithSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/additional_attachments_form"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/mainBarrier"
+                app:layout_constraintTop_toBottomOf="@+id/back4" />
+
+            <TextView
+                android:id="@+id/taxText"
+
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="7dp"
+
+                android:text="@string/tax"
+                app:layout_constraintStart_toStartOf="@+id/backWithSwitch"
+                app:layout_constraintTop_toTopOf="@+id/backWithSwitch" />
+
+            <TextView
+                android:id="@+id/additionalAttText"
+
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+
+                android:text="@string/additionalAttachments"
+                app:layout_constraintStart_toStartOf="@+id/taxText"
+                app:layout_constraintTop_toBottomOf="@+id/taxText" />
+
+            <TextView
+                android:id="@+id/reinvestmentText"
+
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+
+                android:text="@string/reinvestment"
+                app:layout_constraintStart_toStartOf="@+id/additionalAttText"
+                app:layout_constraintTop_toBottomOf="@+id/additionalAttText" />
 
 
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/taxSwitch"
+                android:theme="@style/MySwitch"
 
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                android:layout_marginEnd="26dp"
+
+
+                app:layout_constraintEnd_toEndOf="@+id/backWithSwitch"
+
+                app:layout_constraintTop_toTopOf="@+id/taxText"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/addAttSwitch"
+                android:layout_width="wrap_content"
+
+                android:layout_height="26dp"
+                android:layout_marginEnd="26dp"
+                android:theme="@style/MySwitch"
+
+
+                app:layout_constraintEnd_toEndOf="@+id/backWithSwitch"
+
+                app:layout_constraintTop_toTopOf="@+id/additionalAttText"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/reinvestmentSwitch"
+                android:layout_width="wrap_content"
+
+                android:layout_height="26dp"
+                android:layout_marginEnd="26dp"
+                android:theme="@style/MySwitch"
+
+
+                app:layout_constraintEnd_toEndOf="@+id/backWithSwitch"
+
+                app:layout_constraintTop_toTopOf="@+id/reinvestmentText"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
 
 
 
