@@ -14,8 +14,11 @@ class CompoundInteresttest: AppCompatActivity() {
         binding = CompoundinteresttestBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.group1.visibility = View.GONE
         binding.group2.visibility = View.GONE
         binding.group3.visibility = View.GONE
+        binding.taxElements.visibility = View.GONE
+        binding.reinvestmentElements.visibility = View.GONE
 
         binding.termSlider.addOnChangeListener { slider, value, fromUser ->
             binding.textTermNumber.text = value.toInt().toString() + " лет"
@@ -39,6 +42,38 @@ class CompoundInteresttest: AppCompatActivity() {
 
         binding.cross3.setOnClickListener{
             binding.group3.visibility = View.GONE
+        }
+
+        binding.taxSwitch.setOnCheckedChangeListener { compoundButton, isChecked ->
+
+            if(isChecked){
+                binding.taxElements.visibility = View.VISIBLE
+            }else{
+                binding.taxElements.visibility = View.GONE
+            }
+
+        }
+
+        binding.reinvestmentSwitch.setOnCheckedChangeListener { compoundButton, isChecked ->
+
+            if(isChecked){
+                binding.reinvestmentElements.visibility = View.VISIBLE
+            }else{
+                binding.reinvestmentElements.visibility = View.GONE
+            }
+
+        }
+
+        binding.addAttSwitch.setOnCheckedChangeListener { compoundButton, isChecked ->
+
+            if(isChecked){
+                binding.group1.visibility = View.VISIBLE
+            }else{
+                binding.group1.visibility = View.GONE
+                binding.group2.visibility = View.GONE
+                binding.group3.visibility = View.GONE
+            }
+
         }
     }
 

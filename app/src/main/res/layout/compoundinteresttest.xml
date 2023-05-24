@@ -99,7 +99,7 @@
                 android:layout_marginEnd="13dp"
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/back1" />
+                app:layout_constraintTop_toBottomOf="@id/backN" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -124,17 +124,24 @@
                 app:layout_constraintStart_toStartOf="@+id/textView2"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/reinvestmentElements"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="back2, textView2, spinner1" />
+
+
             <View
                 android:id="@+id/back3"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
 
-                android:layout_marginStart="13dp"
-                android:layout_marginTop="13dp"
                 android:layout_marginEnd="13dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="13dp"
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/back2" />
+                app:layout_constraintTop_toBottomOf="@+id/back1" />
 
             <TextView
                 android:id="@+id/amountText"
@@ -145,7 +152,7 @@
 
                 app:layout_constraintStart_toEndOf="@id/mainBarrier"
                 app:layout_constraintTop_toTopOf="@id/back3" />
-            `
+
 
             <com.google.android.material.slider.Slider
                 android:id="@+id/termSlider"
@@ -238,14 +245,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
 
+                android:layout_marginStart="13dp"
                 android:layout_marginEnd="13dp"
                 android:layout_marginTop="13dp"
-                android:layout_marginStart="13dp"
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/backWithSwitch"
                 app:layout_constraintStart_toEndOf="@id/mainBarrier"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/backWithSwitch" />
 
 
             <TextView
@@ -278,6 +284,13 @@
                 app:layout_constraintStart_toStartOf="@+id/taxRateText"
                 app:layout_constraintTop_toBottomOf="@+id/taxRateText" />
 
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/taxElements"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="backN, taxRateText, taxRate"
+                />
+
             <View
                 android:id="@+id/backAdditionalAttachments1"
                 android:layout_width="match_parent"
@@ -290,7 +303,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
 
                 app:layout_constraintStart_toEndOf="@id/mainBarrier"
-                app:layout_constraintTop_toBottomOf="@id/backN" />
+                app:layout_constraintTop_toBottomOf="@id/back2" />
 
             <TextView
                 android:id="@+id/AdditionalAttachmentsText1"
@@ -393,7 +406,7 @@
                 android:id="@+id/group1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:constraint_referenced_ids="backAdditionalAttachments1,AdditionalAttachmentsText1,AdditionalAttachmentsAmount,AdditionalAttachmentsSpinner1,AdditionalAttachmentsText2,AdditionalAttachmentsTime,AdditionalAttachmentsSpinner2" />
+                app:constraint_referenced_ids="backAdditionalAttachments1,AdditionalAttachmentsText1,AdditionalAttachmentsAmount,AdditionalAttachmentsSpinner1,AdditionalAttachmentsText2,AdditionalAttachmentsTime,AdditionalAttachmentsSpinner2, plusButton" />
 
             <View
                 android:id="@+id/backAdditionalAttachments2"
@@ -861,7 +874,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
 
-                android:text="@string/additionalAttachments"
+                android:text="@string/reinvestment"
                 app:layout_constraintStart_toStartOf="@+id/taxText"
                 app:layout_constraintTop_toBottomOf="@+id/taxText" />
 
@@ -873,7 +886,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
 
-                android:text="@string/reinvestment"
+                android:text="@string/additionalAttachments"
                 app:layout_constraintStart_toStartOf="@+id/additionalAttText"
                 app:layout_constraintTop_toBottomOf="@+id/additionalAttText" />
 
@@ -889,22 +902,7 @@
 
                 app:layout_constraintEnd_toEndOf="@+id/backWithSwitch"
 
-                app:layout_constraintTop_toTopOf="@+id/taxText"
-                tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/addAttSwitch"
-                android:layout_width="wrap_content"
-
-                android:layout_height="26dp"
-                android:layout_marginEnd="26dp"
-                android:theme="@style/MySwitch"
-
-
-                app:layout_constraintEnd_toEndOf="@+id/backWithSwitch"
-
-                app:layout_constraintTop_toTopOf="@+id/additionalAttText"
-                tools:ignore="UseSwitchCompatOrMaterialXml" />
+                app:layout_constraintTop_toTopOf="@+id/taxText" />
 
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/reinvestmentSwitch"
@@ -917,15 +915,22 @@
 
                 app:layout_constraintEnd_toEndOf="@+id/backWithSwitch"
 
-                app:layout_constraintTop_toTopOf="@+id/reinvestmentText"
-                tools:ignore="UseSwitchCompatOrMaterialXml" />
+                app:layout_constraintTop_toTopOf="@+id/additionalAttText" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/addAttSwitch"
+                android:layout_width="wrap_content"
+
+                android:layout_height="26dp"
+                android:layout_marginEnd="26dp"
+                android:theme="@style/MySwitch"
 
 
+                app:layout_constraintEnd_toEndOf="@+id/backWithSwitch"
+
+                app:layout_constraintTop_toTopOf="@+id/reinvestmentText" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
