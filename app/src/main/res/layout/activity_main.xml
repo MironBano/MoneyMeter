@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,43 +8,174 @@
     android:background="@color/black"
     tools:context=".MainActivity">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/dark_grey"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextPrimary"
+        android:text="MoneyMeter"
+        android:textSize="25sp"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="13dp"
+        />
 
     <ScrollView
         android:id="@+id/mainScroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginTop="70dp">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <Button
+            <TextView
+                android:id="@+id/textView"
+                style="@style/TextPrimary"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="13dp"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Инвестиции"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/compoundInterestButton"
                 style="@style/TextView"
-                android:text="@string/CIButton"
-                />
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="52dp"
+                android:layout_width="match_parent"
 
-            <Button
+                android:background="@drawable/additional_attachments_form"
+                android:text="@string/CIButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/inflationButton"
                 style="@style/TextView"
-                android:text="@string/inflation"
-                />
+                android:layout_width="match_parent"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="52dp"
 
-            <Button
+                android:background="@drawable/additional_attachments_form"
+                android:text="@string/inflation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/compoundInterestButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bondButton"
                 style="@style/TextView"
-                android:text="BRUH"
-                />
-        </LinearLayout>
+                android:layout_width="match_parent"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="52dp"
+
+                android:background="@drawable/additional_attachments_form"
+                android:text="Облигации"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/inflationButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/stockButton"
+                style="@style/TextView"
+                android:layout_width="match_parent"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="52dp"
+
+                android:background="@drawable/additional_attachments_form"
+                android:text="Акции"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/inflationButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/futureButton"
+                style="@style/TextView"
+                android:layout_width="match_parent"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="52dp"
+
+                android:background="@drawable/additional_attachments_form"
+                android:text="Фьючерсы"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/bondButton" />
+
+            <TextView
+                android:id="@+id/FinanceText"
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="26dp"
+                android:text="Финансы"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/futureButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/convenorButton"
+                style="@style/TextView"
+                android:layout_width="match_parent"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="52dp"
+
+                android:background="@drawable/additional_attachments_form"
+                android:text="Конвентор валют"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/FinanceText" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/creditButton"
+                style="@style/TextView"
+                android:layout_width="match_parent"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="52dp"
+
+                android:background="@drawable/additional_attachments_form"
+                android:text="Кредит"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/convenorButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/mortgageButton"
+                style="@style/TextView"
+                android:layout_width="match_parent"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="52dp"
+
+                android:background="@drawable/additional_attachments_form"
+                android:text="Ипотека"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/creditButton" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
