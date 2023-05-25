@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, Inflation::class.java)
             startActivity(intent)
         }
+
     }
 
     override fun onStart() {
