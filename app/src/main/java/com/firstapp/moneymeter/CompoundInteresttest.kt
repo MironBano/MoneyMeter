@@ -48,8 +48,10 @@ class CompoundInteresttest: AppCompatActivity() {
 
             if(isChecked){
                 binding.taxElements.visibility = View.VISIBLE
-            }else{
+            }
+            else{
                 binding.taxElements.visibility = View.GONE
+                binding.taxRate.setText("")
             }
 
         }
@@ -58,7 +60,8 @@ class CompoundInteresttest: AppCompatActivity() {
 
             if(isChecked){
                 binding.reinvestmentElements.visibility = View.VISIBLE
-            }else{
+            }
+            else{
                 binding.reinvestmentElements.visibility = View.GONE
             }
 
@@ -68,10 +71,13 @@ class CompoundInteresttest: AppCompatActivity() {
 
             if(isChecked){
                 binding.group1.visibility = View.VISIBLE
-            }else{
+            }
+            else{
                 binding.group1.visibility = View.GONE
                 binding.group2.visibility = View.GONE
                 binding.group3.visibility = View.GONE
+                binding.AdditionalAttachmentsAmount.setText("")
+                binding.AdditionalAttachmentsTime.setText("")
             }
 
         }
@@ -108,6 +114,25 @@ class CompoundInteresttest: AppCompatActivity() {
 
     private fun analiticsChanger() {
         binding.startAmountText.text = binding.InitAmount.text.toString()
+
+        val startAm:Int = binding.InitAmount.text.toString().toInt()
+        val term:Int = binding.textTermNumber.text.removeSuffix(" лет").toString().toInt()
+        val rate:Int = binding.textRateNumber.text.removeSuffix(" %").toString().toInt()
+        var resultAm:Float = startAm.toFloat()
+
+        for(i in 1..term){
+            resultAm += (resultAm / 100) * rate
+        }
+
+        var incomeAm:Float = resultAm - startAm
+
+        if(binding.taxRate.text.toString() != ""){
+            resultAm -= (incomeAm/100) * binding.taxRate.text.toString().toInt()
+            incomeAm = resultAm - startAm
+        }
+
+        binding.incomeAmountText.text = incomeAm.toInt().toString()
+        binding.resultAmount.text = resultAm.toInt().toString()
     }
 
 }

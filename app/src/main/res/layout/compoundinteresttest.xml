@@ -27,34 +27,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
-            <View
-                android:id="@+id/StartPoint"
-                android:layout_width="13dp"
-                android:layout_height="13dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-
-                />
-
-            <androidx.constraintlayout.widget.Barrier
-                android:id="@+id/mainBarrier"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:barrierDirection="end"
-                app:constraint_referenced_ids="StartPoint" />
-
             <View
                 android:id="@+id/back1"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
 
                 android:layout_marginStart="13dp"
+                android:layout_marginTop="13dp"
                 android:layout_marginEnd="13dp"
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
-                app:layout_constraintTop_toBottomOf="@+id/StartPoint" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/text1"
@@ -64,7 +48,7 @@
                 android:layout_marginTop="7dp"
                 android:text="@string/initialAmount"
 
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
+                app:layout_constraintStart_toStartOf="@id/back1"
                 app:layout_constraintTop_toTopOf="@id/back1" />
 
             <EditText
@@ -86,20 +70,21 @@
                 android:maxLength="14"
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="@+id/back1"
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text1" />
 
             <View
                 android:id="@+id/back2"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="107dp"
 
                 android:layout_marginStart="13dp"
                 android:layout_marginTop="13dp"
                 android:layout_marginEnd="13dp"
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/backN" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/back4" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -108,16 +93,16 @@
                 android:layout_marginStart="13dp"
                 android:layout_marginTop="7dp"
                 android:text="@string/reinvestmentPeriod"
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
+                app:layout_constraintStart_toStartOf="@id/back2"
                 app:layout_constraintTop_toTopOf="@+id/back2" />
 
             <Spinner
-                android:id="@+id/spinner1"
+                android:id="@+id/reinvestmentSpinner"
                 style="@style/TextSecondary"
                 android:layout_width="200dp"
                 android:layout_height="48dp"
 
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="13dp"
                 android:background="@drawable/edittext_form"
                 android:entries="@array/reinvestmentPeriodArray"
                 android:textAlignment="center"
@@ -128,7 +113,7 @@
                 android:id="@+id/reinvestmentElements"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:constraint_referenced_ids="back2, textView2, spinner1" />
+                app:constraint_referenced_ids="back2, textView2, reinvestmentSpinner" />
 
 
             <View
@@ -136,11 +121,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
 
-                android:layout_marginEnd="13dp"
-                android:layout_marginTop="13dp"
                 android:layout_marginStart="13dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="13dp"
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/back1" />
 
             <TextView
@@ -150,7 +136,7 @@
                 android:layout_marginTop="7dp"
                 android:text="@string/term"
 
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
+                app:layout_constraintStart_toStartOf="@id/back3"
                 app:layout_constraintTop_toTopOf="@id/back3" />
 
 
@@ -196,6 +182,7 @@
                 android:layout_marginEnd="13dp"
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/back3" />
 
             <TextView
@@ -205,7 +192,7 @@
                 android:layout_marginTop="7dp"
                 android:text="@string/rate"
 
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
+                app:layout_constraintStart_toStartOf="@id/back4"
                 app:layout_constraintTop_toTopOf="@id/back4" />
 
             <com.google.android.material.slider.Slider
@@ -241,16 +228,112 @@
                 />
 
             <View
+                android:id="@+id/backWithSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="13dp"
+                android:background="@drawable/additional_attachments_form"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/back2" />
+
+            <TextView
+                android:id="@+id/taxText"
+
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="13dp"
+
+                android:text="@string/tax"
+                app:layout_constraintStart_toStartOf="@+id/backWithSwitch"
+                app:layout_constraintTop_toTopOf="@+id/backWithSwitch" />
+
+            <TextView
+                android:id="@+id/additionalAttText"
+
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+
+                android:text="@string/reinvestment"
+                app:layout_constraintStart_toStartOf="@+id/taxText"
+                app:layout_constraintTop_toBottomOf="@+id/taxText" />
+
+            <TextView
+                android:id="@+id/reinvestmentText"
+
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+
+                android:text="@string/additionalAttachments"
+                app:layout_constraintStart_toStartOf="@+id/additionalAttText"
+                app:layout_constraintTop_toBottomOf="@+id/additionalAttText" />
+
+
+            <Switch
+                android:id="@+id/taxSwitch"
+                android:theme="@style/MySwitch"
+
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                android:layout_marginEnd="26dp"
+
+
+                app:layout_constraintEnd_toEndOf="@+id/backWithSwitch"
+
+                app:layout_constraintTop_toTopOf="@+id/taxText"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <Switch
+                android:id="@+id/reinvestmentSwitch"
+                android:layout_width="wrap_content"
+
+                android:layout_height="26dp"
+                android:layout_marginEnd="26dp"
+                android:theme="@style/MySwitch"
+
+
+                app:layout_constraintEnd_toEndOf="@+id/backWithSwitch"
+
+                app:layout_constraintTop_toTopOf="@+id/additionalAttText"
+                tools:ignore="UseSwitchCompatOrMaterialXml"
+                />
+
+            <Switch
+                android:id="@+id/addAttSwitch"
+                android:layout_width="wrap_content"
+
+                android:layout_height="26dp"
+                android:layout_marginEnd="26dp"
+                android:theme="@style/MySwitch"
+
+
+                app:layout_constraintEnd_toEndOf="@+id/backWithSwitch"
+
+                app:layout_constraintTop_toTopOf="@+id/reinvestmentText"
+                tools:ignore="UseSwitchCompatOrMaterialXml"
+                />
+
+            <View
                 android:id="@+id/backN"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="107dp"
 
                 android:layout_marginStart="13dp"
                 android:layout_marginEnd="13dp"
                 android:layout_marginTop="13dp"
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/backWithSwitch" />
 
 
@@ -271,7 +354,7 @@
                 style="@style/TextSecondary"
                 android:layout_width="70dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="13dp"
 
                 android:background="@drawable/edittext_form"
                 android:cursorVisible="true"
@@ -294,16 +377,16 @@
             <View
                 android:id="@+id/backAdditionalAttachments1"
                 android:layout_width="match_parent"
-                android:layout_height="190dp"
+                android:layout_height="200dp"
+
                 android:layout_marginStart="13dp"
                 android:layout_marginTop="13dp"
-
                 android:layout_marginEnd="13dp"
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
 
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
-                app:layout_constraintTop_toBottomOf="@id/back2" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/backN" />
 
             <TextView
                 android:id="@+id/AdditionalAttachmentsText1"
@@ -311,7 +394,7 @@
                 style="@style/TextPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="13dp"
 
                 android:layout_marginTop="7dp"
                 android:text="@string/additionalAttachments"
@@ -324,9 +407,9 @@
                 style="@style/TextSecondary"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="13dp"
 
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="13dp"
                 android:background="@drawable/edittext_form"
                 android:cursorVisible="true"
                 android:hint="@string/EnterHint1"
@@ -360,9 +443,9 @@
                 style="@style/TextPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="13dp"
 
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="13dp"
                 android:text="@string/term"
                 app:layout_constraintStart_toStartOf="@id/backAdditionalAttachments1"
                 app:layout_constraintTop_toBottomOf="@id/AdditionalAttachmentsAmount" />
@@ -373,9 +456,9 @@
                 style="@style/TextSecondary"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="13dp"
 
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="13dp"
                 android:background="@drawable/edittext_form"
                 android:cursorVisible="true"
                 android:hint="@string/EnterHint2"
@@ -411,7 +494,7 @@
             <View
                 android:id="@+id/backAdditionalAttachments2"
                 android:layout_width="match_parent"
-                android:layout_height="190dp"
+                android:layout_height="200dp"
                 android:layout_marginStart="13dp"
                 android:layout_marginTop="13dp"
 
@@ -419,7 +502,7 @@
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
 
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/backAdditionalAttachments1" />
 
             <TextView
@@ -428,7 +511,7 @@
                 style="@style/TextPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="13dp"
 
                 android:layout_marginTop="7dp"
                 android:text="@string/additionalAttachments"
@@ -453,9 +536,9 @@
                 style="@style/TextSecondary"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="13dp"
 
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="13dp"
                 android:background="@drawable/edittext_form"
                 android:cursorVisible="true"
                 android:hint="@string/EnterHint1"
@@ -489,9 +572,9 @@
                 style="@style/TextPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="13dp"
 
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="13dp"
                 android:text="@string/term"
                 app:layout_constraintStart_toStartOf="@id/backAdditionalAttachments2"
                 app:layout_constraintTop_toBottomOf="@id/AdditionalAttachments2Amount" />
@@ -502,9 +585,9 @@
                 style="@style/TextSecondary"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="13dp"
 
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="13dp"
                 android:background="@drawable/edittext_form"
                 android:cursorVisible="true"
                 android:hint="@string/EnterHint2"
@@ -541,7 +624,7 @@
             <View
                 android:id="@+id/backAdditionalAttachments3"
                 android:layout_width="match_parent"
-                android:layout_height="190dp"
+                android:layout_height="200dp"
                 android:layout_marginStart="13dp"
                 android:layout_marginTop="13dp"
 
@@ -549,7 +632,7 @@
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
 
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/backAdditionalAttachments2" />
 
             <TextView
@@ -558,7 +641,7 @@
                 style="@style/TextPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="13dp"
 
                 android:layout_marginTop="7dp"
                 android:text="@string/additionalAttachments"
@@ -583,9 +666,9 @@
                 style="@style/TextSecondary"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="13dp"
 
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="13dp"
                 android:background="@drawable/edittext_form"
                 android:cursorVisible="true"
                 android:hint="@string/EnterHint1"
@@ -619,9 +702,9 @@
                 style="@style/TextPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="13dp"
 
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="13dp"
                 android:text="@string/term"
                 app:layout_constraintStart_toStartOf="@id/backAdditionalAttachments3"
                 app:layout_constraintTop_toBottomOf="@id/AdditionalAttachments3Amount" />
@@ -632,9 +715,9 @@
                 style="@style/TextSecondary"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="13dp"
 
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="13dp"
                 android:background="@drawable/edittext_form"
                 android:cursorVisible="true"
                 android:hint="@string/EnterHint2"
@@ -701,7 +784,7 @@
             <View
                 android:id="@+id/backAnal"
                 android:layout_width="match_parent"
-                android:layout_height="155dp"
+                android:layout_height="150dp"
 
                 android:layout_marginStart="13dp"
                 android:layout_marginTop="13dp"
@@ -709,7 +792,7 @@
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/analitics"
-                app:layout_constraintStart_toStartOf="@id/mainBarrier"
+                app:layout_constraintStart_toStartOf="parent"
                 />
 
             <TextView
@@ -718,9 +801,9 @@
                 style="@style/TextPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="13dp"
 
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="7dp"
                 android:text="Итоговая сумма:"
                 app:layout_constraintStart_toStartOf="@id/backAnal"
                 app:layout_constraintTop_toTopOf="@id/backAnal"
@@ -728,13 +811,13 @@
 
             <TextView
 
-                android:id="@+id/totalAmount"
+                android:id="@+id/resultAmount"
                 style="@style/TextPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
                 android:layout_marginStart="13dp"
-                android:text="312331"
+                android:text=""
                 app:layout_constraintBottom_toBottomOf="@+id/resultText"
                 app:layout_constraintStart_toEndOf="@id/resultText"
                 app:layout_constraintTop_toTopOf="@+id/resultText" />
@@ -742,31 +825,31 @@
 
 
             <TextView
-                android:id="@+id/attachmentsText"
-
-                style="@style/TextPrimary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-
-                android:layout_marginTop="13dp"
-                android:text="Доход:"
-                app:layout_constraintStart_toStartOf="@id/backAnal"
-                app:layout_constraintTop_toBottomOf="@id/resultText"
-                />
-
-            <TextView
-                android:id="@+id/inconeText"
+                android:id="@+id/incomeText"
 
                 style="@style/TextPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="13dp"
 
-                android:text="312331"
-                app:layout_constraintBottom_toBottomOf="@+id/attachmentsText"
-                app:layout_constraintStart_toEndOf="@+id/attachmentsText"
-                app:layout_constraintTop_toTopOf="@+id/attachmentsText" />
+                android:layout_marginTop="13dp"
+                android:text="@string/income"
+                app:layout_constraintStart_toStartOf="@id/backAnal"
+                app:layout_constraintTop_toBottomOf="@id/resultText"
+                />
+
+            <TextView
+                android:id="@+id/incomeAmountText"
+
+                style="@style/TextPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="@+id/incomeText"
+                app:layout_constraintStart_toEndOf="@+id/incomeText"
+                app:layout_constraintTop_toTopOf="@+id/incomeText" />
 
             <TextView
                 android:id="@+id/aditionAttachmentsText"
@@ -774,12 +857,12 @@
                 style="@style/TextPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="13dp"
 
                 android:layout_marginTop="13dp"
                 android:text="Сумма всех пополнений:"
                 app:layout_constraintStart_toStartOf="@id/backAnal"
-                app:layout_constraintTop_toBottomOf="@id/attachmentsText"
+                app:layout_constraintTop_toBottomOf="@id/incomeText"
                 />
 
             <TextView
@@ -790,7 +873,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="13dp"
 
-                android:text="312331"
+                android:text=""
                 app:layout_constraintBottom_toBottomOf="@+id/aditionAttachmentsText"
                 app:layout_constraintStart_toEndOf="@+id/aditionAttachmentsText"
                 app:layout_constraintTop_toTopOf="@+id/aditionAttachmentsText" />
@@ -801,7 +884,7 @@
                 style="@style/TextPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
+                android:layout_marginStart="13dp"
                 android:layout_marginTop="13dp"
 
                 android:text="Начальная сумма:"
@@ -817,7 +900,7 @@
                 android:layout_marginTop="13dp"
                 android:layout_marginStart="7dp"
 
-                android:text="1"
+                android:text=""
                 app:layout_constraintBottom_toBottomOf="@+id/startAmount"
                 app:layout_constraintStart_toEndOf="@+id/startAmount"
                 app:layout_constraintTop_toBottomOf="@+id/aditionAttachmentsText" />
@@ -840,95 +923,7 @@
                 app:layout_constraintTop_toBottomOf="@id/backAnal"
                 />
 
-            <View
-                android:id="@+id/backWithSwitch"
-                android:layout_width="match_parent"
-                android:layout_height="125dp"
 
-                android:layout_marginStart="13dp"
-                android:layout_marginEnd="13dp"
-                android:layout_marginTop="13dp"
-                android:background="@drawable/additional_attachments_form"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/mainBarrier"
-                app:layout_constraintTop_toBottomOf="@+id/back4" />
-
-            <TextView
-                android:id="@+id/taxText"
-
-                style="@style/TextPrimary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
-                android:layout_marginStart="7dp"
-
-                android:text="@string/tax"
-                app:layout_constraintStart_toStartOf="@+id/backWithSwitch"
-                app:layout_constraintTop_toTopOf="@+id/backWithSwitch" />
-
-            <TextView
-                android:id="@+id/additionalAttText"
-
-                style="@style/TextPrimary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
-
-                android:text="@string/reinvestment"
-                app:layout_constraintStart_toStartOf="@+id/taxText"
-                app:layout_constraintTop_toBottomOf="@+id/taxText" />
-
-            <TextView
-                android:id="@+id/reinvestmentText"
-
-                style="@style/TextPrimary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
-
-                android:text="@string/additionalAttachments"
-                app:layout_constraintStart_toStartOf="@+id/additionalAttText"
-                app:layout_constraintTop_toBottomOf="@+id/additionalAttText" />
-
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/taxSwitch"
-                android:theme="@style/MySwitch"
-
-                android:layout_width="wrap_content"
-                android:layout_height="26dp"
-                android:layout_marginEnd="26dp"
-
-
-                app:layout_constraintEnd_toEndOf="@+id/backWithSwitch"
-
-                app:layout_constraintTop_toTopOf="@+id/taxText" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/reinvestmentSwitch"
-                android:layout_width="wrap_content"
-
-                android:layout_height="26dp"
-                android:layout_marginEnd="26dp"
-                android:theme="@style/MySwitch"
-
-
-                app:layout_constraintEnd_toEndOf="@+id/backWithSwitch"
-
-                app:layout_constraintTop_toTopOf="@+id/additionalAttText" />
-
-            <androidx.appcompat.widget.SwitchCompat
-                android:id="@+id/addAttSwitch"
-                android:layout_width="wrap_content"
-
-                android:layout_height="26dp"
-                android:layout_marginEnd="26dp"
-                android:theme="@style/MySwitch"
-
-
-                app:layout_constraintEnd_toEndOf="@+id/backWithSwitch"
-
-                app:layout_constraintTop_toTopOf="@+id/reinvestmentText" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
