@@ -38,10 +38,14 @@ class CompoundInteresttest: AppCompatActivity() {
 
         binding.cross2.setOnClickListener{
             binding.group2.visibility = View.GONE
+            binding.AdditionalAttachments2Amount.setText("")
+            binding.AdditionalAttachments2Time.setText("")
         }
 
         binding.cross3.setOnClickListener{
             binding.group3.visibility = View.GONE
+            binding.AdditionalAttachments3Amount.setText("")
+            binding.AdditionalAttachments3Time.setText("")
         }
 
         binding.taxSwitch.setOnCheckedChangeListener { compoundButton, isChecked ->
@@ -76,8 +80,16 @@ class CompoundInteresttest: AppCompatActivity() {
                 binding.group1.visibility = View.GONE
                 binding.group2.visibility = View.GONE
                 binding.group3.visibility = View.GONE
+
+                //отчистка данных в блоках доп вложений
                 binding.AdditionalAttachmentsAmount.setText("")
                 binding.AdditionalAttachmentsTime.setText("")
+
+                binding.AdditionalAttachments2Amount.setText("")
+                binding.AdditionalAttachments2Time.setText("")
+
+                binding.AdditionalAttachments3Amount.setText("")
+                binding.AdditionalAttachments3Time.setText("")
             }
 
         }
@@ -103,6 +115,7 @@ class CompoundInteresttest: AppCompatActivity() {
         super.onDestroy()
     }
 
+    // локика кнопки добавления доп вложений
     private fun showAddAtt() {
         when{
             //groupN необходимо ставить в порядке убывания N
