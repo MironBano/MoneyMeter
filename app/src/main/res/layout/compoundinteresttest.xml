@@ -28,7 +28,7 @@
             android:layout_height="wrap_content">
 
             <View
-                android:id="@+id/back1"
+                android:id="@+id/InitAmBack"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
 
@@ -48,8 +48,8 @@
                 android:layout_marginTop="7dp"
                 android:text="@string/initialAmount"
 
-                app:layout_constraintStart_toStartOf="@id/back1"
-                app:layout_constraintTop_toTopOf="@id/back1" />
+                app:layout_constraintStart_toStartOf="@id/InitAmBack"
+                app:layout_constraintTop_toTopOf="@id/InitAmBack" />
 
             <EditText
                 android:id="@+id/InitAmount"
@@ -69,12 +69,12 @@
                 android:inputType="number"
                 android:maxLength="14"
                 android:textSize="17sp"
-                app:layout_constraintEnd_toEndOf="@+id/back1"
+                app:layout_constraintEnd_toEndOf="@+id/InitAmBack"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text1" />
 
             <View
-                android:id="@+id/back2"
+                android:id="@+id/reinvestmentBack"
                 android:layout_width="match_parent"
                 android:layout_height="107dp"
 
@@ -84,7 +84,7 @@
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/back4" />
+                app:layout_constraintTop_toBottomOf="@+id/backWithSwitch" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -93,8 +93,8 @@
                 android:layout_marginStart="13dp"
                 android:layout_marginTop="7dp"
                 android:text="@string/reinvestmentPeriod"
-                app:layout_constraintStart_toStartOf="@id/back2"
-                app:layout_constraintTop_toTopOf="@+id/back2" />
+                app:layout_constraintStart_toStartOf="@id/reinvestmentBack"
+                app:layout_constraintTop_toTopOf="@+id/reinvestmentBack" />
 
             <Spinner
                 android:id="@+id/reinvestmentSpinner"
@@ -113,11 +113,11 @@
                 android:id="@+id/reinvestmentElements"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:constraint_referenced_ids="back2, textView2, reinvestmentSpinner" />
+                app:constraint_referenced_ids="reinvestmentBack, textView2, reinvestmentSpinner" />
 
 
             <View
-                android:id="@+id/back3"
+                android:id="@+id/termSliderBack"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
 
@@ -127,17 +127,17 @@
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/back1" />
+                app:layout_constraintTop_toBottomOf="@+id/InitAmBack" />
 
             <TextView
-                android:id="@+id/amountText"
+                android:id="@+id/termText"
                 style="@style/TextPrimary"
                 android:layout_marginStart="13dp"
                 android:layout_marginTop="7dp"
                 android:text="@string/term"
 
-                app:layout_constraintStart_toStartOf="@id/back3"
-                app:layout_constraintTop_toTopOf="@id/back3" />
+                app:layout_constraintStart_toStartOf="@id/termSliderBack"
+                app:layout_constraintTop_toTopOf="@id/termSliderBack" />
 
 
             <com.google.android.material.slider.Slider
@@ -152,8 +152,8 @@
                 app:haloColor="@color/transparent"
                 app:labelBehavior="gone"
 
-                app:layout_constraintStart_toStartOf="@+id/amountText"
-                app:layout_constraintTop_toBottomOf="@+id/amountText" />
+                app:layout_constraintStart_toStartOf="@+id/termText"
+                app:layout_constraintTop_toBottomOf="@+id/termText" />
 
             <TextView
                 android:id="@+id/textTermNumber"
@@ -169,11 +169,11 @@
                 android:text="0 лет"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/termSlider"
-                app:layout_constraintEnd_toEndOf="@+id/back3"
+                app:layout_constraintEnd_toEndOf="@+id/termSliderBack"
                 app:layout_constraintTop_toTopOf="@+id/termSlider" />
 
             <View
-                android:id="@+id/back4"
+                android:id="@+id/rateSliderBack"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
 
@@ -183,7 +183,7 @@
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/back3" />
+                app:layout_constraintTop_toBottomOf="@id/termSliderBack" />
 
             <TextView
                 android:id="@+id/rateText"
@@ -192,8 +192,8 @@
                 android:layout_marginTop="7dp"
                 android:text="@string/rate"
 
-                app:layout_constraintStart_toStartOf="@id/back4"
-                app:layout_constraintTop_toTopOf="@id/back4" />
+                app:layout_constraintStart_toStartOf="@id/rateSliderBack"
+                app:layout_constraintTop_toTopOf="@id/rateSliderBack" />
 
             <com.google.android.material.slider.Slider
                 android:id="@+id/rateSlider"
@@ -223,7 +223,7 @@
                 android:text="0 %"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/rateSlider"
-                app:layout_constraintEnd_toEndOf="@id/back4"
+                app:layout_constraintEnd_toEndOf="@id/rateSliderBack"
                 app:layout_constraintTop_toTopOf="@id/rateSlider"
                 />
 
@@ -239,7 +239,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
 
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/back2" />
+                app:layout_constraintTop_toBottomOf="@+id/rateSliderBack" />
 
             <TextView
                 android:id="@+id/taxText"
@@ -262,7 +262,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
 
-                android:text="@string/reinvestment"
+                android:text="Период реивестированния"
                 app:layout_constraintStart_toStartOf="@+id/taxText"
                 app:layout_constraintTop_toBottomOf="@+id/taxText" />
 
@@ -324,7 +324,7 @@
                 />
 
             <View
-                android:id="@+id/backN"
+                android:id="@+id/taxBack"
                 android:layout_width="match_parent"
                 android:layout_height="107dp"
 
@@ -334,7 +334,7 @@
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/backWithSwitch" />
+                app:layout_constraintTop_toBottomOf="@+id/reinvestmentBack" />
 
 
             <TextView
@@ -345,8 +345,8 @@
                 android:layout_marginTop="7dp"
                 android:text="@string/taxRate"
 
-                app:layout_constraintStart_toStartOf="@+id/backN"
-                app:layout_constraintTop_toTopOf="@+id/backN" />
+                app:layout_constraintStart_toStartOf="@+id/taxBack"
+                app:layout_constraintTop_toTopOf="@+id/taxBack" />
 
             <EditText
                 android:id="@+id/taxRate"
@@ -371,7 +371,7 @@
                 android:id="@+id/taxElements"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:constraint_referenced_ids="backN, taxRateText, taxRate"
+                app:constraint_referenced_ids="taxBack, taxRateText, taxRate"
                 />
 
             <View
@@ -386,7 +386,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
 
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/backN" />
+                app:layout_constraintTop_toBottomOf="@id/taxBack" />
 
             <TextView
                 android:id="@+id/AdditionalAttachmentsText1"
@@ -810,7 +810,6 @@
                 />
 
             <TextView
-
                 android:id="@+id/resultAmount"
                 style="@style/TextPrimary"
                 android:layout_width="wrap_content"
@@ -839,7 +838,7 @@
                 />
 
             <TextView
-                android:id="@+id/incomeAmountText"
+                android:id="@+id/incomeAmount"
 
                 style="@style/TextPrimary"
                 android:layout_width="wrap_content"
@@ -879,7 +878,7 @@
                 app:layout_constraintTop_toTopOf="@+id/aditionAttachmentsText" />
 
             <TextView
-                android:id="@+id/startAmount"
+                android:id="@+id/startAmountText"
 
                 style="@style/TextPrimary"
                 android:layout_width="wrap_content"
@@ -892,18 +891,17 @@
                 app:layout_constraintTop_toBottomOf="@+id/aditionAttachmentsText" />
 
             <TextView
-                android:id="@+id/startAmountText"
+                android:id="@+id/startAmount"
 
                 style="@style/TextPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
                 android:layout_marginStart="7dp"
 
                 android:text=""
-                app:layout_constraintBottom_toBottomOf="@+id/startAmount"
-                app:layout_constraintStart_toEndOf="@+id/startAmount"
-                app:layout_constraintTop_toBottomOf="@+id/aditionAttachmentsText" />
+                app:layout_constraintBottom_toBottomOf="@+id/startAmountText"
+                app:layout_constraintStart_toEndOf="@+id/startAmountText"
+                app:layout_constraintTop_toTopOf="@+id/startAmountText" />
 
             <Button
                 android:textColor="@color/black"

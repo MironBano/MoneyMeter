@@ -113,25 +113,31 @@ class CompoundInteresttest: AppCompatActivity() {
     }
 
     private fun analiticsChanger() {
-        binding.startAmountText.text = binding.InitAmount.text.toString()
+        if((binding.InitAmount.text.toString() == "") || (binding.textTermNumber.text.toString() == "") || (binding.textRateNumber.text.toString() == "")){
+            return
+        }
+
+        binding.startAmount.text = binding.InitAmount.text.toString()
 
         val startAm:Int = binding.InitAmount.text.toString().toInt()
         val term:Int = binding.textTermNumber.text.removeSuffix(" лет").toString().toInt()
         val rate:Int = binding.textRateNumber.text.removeSuffix(" %").toString().toInt()
         var resultAm:Float = startAm.toFloat()
 
+        // рассчет сложного процента
         for(i in 1..term){
             resultAm += (resultAm / 100) * rate
         }
 
         var incomeAm:Float = resultAm - startAm
 
+        // Вычетание налогов
         if(binding.taxRate.text.toString() != ""){
             resultAm -= (incomeAm/100) * binding.taxRate.text.toString().toInt()
             incomeAm = resultAm - startAm
         }
 
-        binding.incomeAmountText.text = incomeAm.toInt().toString()
+        binding.incomeAmount.text = incomeAm.toInt().toString()
         binding.resultAmount.text = resultAm.toInt().toString()
     }
 

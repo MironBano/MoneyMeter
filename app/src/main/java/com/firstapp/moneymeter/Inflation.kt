@@ -47,13 +47,19 @@ class Inflation: AppCompatActivity() {
 
     private fun amountChanger(){
 
+        if((binding.startAmount.text.toString() == "") || (binding.textTermNumber.text.toString() == "") || (binding.textRateNumber.text.toString() == "")){
+            return
+        }
+
         val startAm:Int = binding.startAmount.text.toString().toInt()
         val term:Int = binding.textTermNumber.text.removeSuffix(" лет").toString().toInt()
         val rate:Int = binding.textRateNumber.text.removeSuffix(" %").toString().toInt()
         var endAm:Float = startAm.toFloat()
+
         for(i in 1..term){
             endAm -= (endAm / 100) * rate
         }
+
         binding.endAmount.text = endAm.toInt().toString()
     }
 

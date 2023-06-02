@@ -94,7 +94,7 @@
 
     <TextView
         android:id="@+id/endAmount"
-        style="@style/TextSecondary"
+        style="@style/TextPrimary"
         android:layout_width="110dp"
         android:layout_height="48dp"
         android:layout_marginEnd="13dp"
@@ -102,6 +102,7 @@
 
         android:textColor="@color/bright_grey"
         android:text="@string/endAmount"
+        android:gravity="center"
         android:background="@drawable/edittext_form"
         app:layout_constraintEnd_toEndOf="@+id/back1"
         app:layout_constraintTop_toTopOf="@+id/back1"
