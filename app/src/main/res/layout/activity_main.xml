@@ -18,32 +18,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView3"
-        style="@style/TextPrimary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/donatButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="13dp"
         android:layout_marginStart="13dp"
-        android:layout_marginTop="17dp"
-        android:text="MoneyMeter"
-        android:textSize="25sp"
+
+        android:background="@drawable/donaticon"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/temp1"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:background="@drawable/yellow_circle"
-        app:layout_constraintEnd_toStartOf="@+id/temp2"
-        app:layout_constraintTop_toTopOf="@+id/view2" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/settingsButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginEnd="13dp"
 
-    <View
-        android:id="@+id/temp2"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:background="@drawable/yellow_circle"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/settingsicon"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
@@ -237,7 +234,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textView"
                 app:layout_constraintTop_toBottomOf="@+id/creditButton" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
