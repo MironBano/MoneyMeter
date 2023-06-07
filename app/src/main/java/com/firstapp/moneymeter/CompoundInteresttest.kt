@@ -131,8 +131,13 @@ class CompoundInteresttest: AppCompatActivity() {
         Toast.makeText(applicationContext, "Раздел в разработке, ввод данных не повлияет на результат", Toast.LENGTH_LONG).show()
     }
 
+    private fun notEnoughData(){
+        Toast.makeText(applicationContext, "Не все данные введены", Toast.LENGTH_SHORT).show()
+    }
+
     private fun analiticsChanger() {
         if((binding.InitAmount.text.toString() == "") || (binding.textTermNumber.text.toString() == "") || (binding.textRateNumber.text.toString() == "")){
+            notEnoughData()
             return
         }
 

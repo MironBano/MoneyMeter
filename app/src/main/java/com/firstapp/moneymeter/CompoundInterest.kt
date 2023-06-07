@@ -3,6 +3,7 @@ package com.firstapp.moneymeter
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.firstapp.moneymeter.databinding.CompoundinterestBinding
 class CompoundInterest: AppCompatActivity() {
@@ -43,8 +44,12 @@ class CompoundInterest: AppCompatActivity() {
         super.onDestroy()
     }
 
+    private fun notEnoughData(){
+        Toast.makeText(applicationContext, "Не все данные введены", Toast.LENGTH_SHORT).show()
+    }
     private fun doCalculation(){
         if((binding.startAmount.text.toString() == "") || (binding.termAmount.text.toString() == "") || (binding.rateAmount.text.toString() == "")){
+            notEnoughData()
             return
         }
 
