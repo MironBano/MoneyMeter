@@ -205,12 +205,20 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/futureButton" />
 
+            <View
+                android:id="@+id/convenorIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/exchngeicon"
+                app:layout_constraintStart_toStartOf="@+id/FinanceText"
+                app:layout_constraintTop_toTopOf="@+id/convenorButton" />
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/convenorButton"
                 style="@style/TextView"
                 android:layout_width="match_parent"
                 android:layout_marginTop="13dp"
-                android:layout_marginStart="26dp"
+                android:layout_marginStart="87dp"
                 android:layout_marginEnd="52dp"
 
                 android:background="@drawable/additional_attachments_form"
@@ -219,12 +227,20 @@
                 app:layout_constraintStart_toStartOf="@+id/textView"
                 app:layout_constraintTop_toBottomOf="@+id/FinanceText" />
 
+            <View
+                android:id="@+id/creditIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/percenticon"
+                app:layout_constraintStart_toStartOf="@+id/FinanceText"
+                app:layout_constraintTop_toTopOf="@+id/creditButton" />
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/creditButton"
                 style="@style/TextView"
                 android:layout_width="match_parent"
                 android:layout_marginTop="13dp"
-                android:layout_marginStart="26dp"
+                android:layout_marginStart="87dp"
                 android:layout_marginEnd="52dp"
 
                 android:background="@drawable/additional_attachments_form"
@@ -233,12 +249,22 @@
                 app:layout_constraintStart_toStartOf="@+id/textView"
                 app:layout_constraintTop_toBottomOf="@+id/convenorButton" />
 
+
+
+            <View
+                android:id="@+id/mortgageIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/mortgageicon"
+                app:layout_constraintStart_toStartOf="@+id/FinanceText"
+                app:layout_constraintTop_toTopOf="@+id/mortgageButton" />
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/mortgageButton"
                 style="@style/TextView"
                 android:layout_width="match_parent"
                 android:layout_marginTop="13dp"
-                android:layout_marginStart="26dp"
+                android:layout_marginStart="87dp"
                 android:layout_marginEnd="52dp"
 
                 android:background="@drawable/additional_attachments_form"
