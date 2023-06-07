@@ -3,6 +3,7 @@ package com.firstapp.moneymeter
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.firstapp.moneymeter.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +21,43 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, Inflation::class.java)
             startActivity(intent)
         }
+
+        binding.donatButton.setOnClickListener{
+            notReadyWarning()
+        }
+
+        binding.noteIcon.setOnClickListener{
+            notReadyWarning()
+        }
+
+        binding.settingsButton.setOnClickListener{
+            notReadyWarning()
+        }
+
+        binding.bondButton.setOnClickListener{
+            notReadyWarning()
+        }
+
+        binding.stockButton.setOnClickListener{
+            notReadyWarning()
+        }
+
+        binding.futureButton.setOnClickListener{
+            notReadyWarning()
+        }
+
+        binding.convenorButton.setOnClickListener{
+            notReadyWarning()
+        }
+
+        binding.creditButton.setOnClickListener{
+            notReadyWarning()
+        }
+
+        binding.mortgageButton.setOnClickListener{
+            notReadyWarning()
+        }
+
 
     }
 
@@ -41,5 +79,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
+    }
+
+    private fun notReadyWarning(){
+        Toast.makeText(applicationContext, "Раздел в разработке", Toast.LENGTH_SHORT).show()
     }
 }

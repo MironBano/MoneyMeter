@@ -2,6 +2,7 @@ package com.firstapp.moneymeter
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.firstapp.moneymeter.databinding.CompoundinteresttestBinding
 
@@ -75,6 +76,7 @@ class CompoundInteresttest: AppCompatActivity() {
 
             if(isChecked){
                 binding.group1.visibility = View.VISIBLE
+                notReadyWarning()
             }
             else{
                 binding.group1.visibility = View.GONE
@@ -123,6 +125,10 @@ class CompoundInteresttest: AppCompatActivity() {
             binding.group2.visibility === View.VISIBLE -> binding.group3.visibility = View.VISIBLE
             binding.group1.visibility === View.VISIBLE -> binding.group2.visibility = View.VISIBLE
         }
+    }
+
+    private fun notReadyWarning(){
+        Toast.makeText(applicationContext, "Раздел в разработке, ввод данных не повлияет на результат", Toast.LENGTH_LONG).show()
     }
 
     private fun analiticsChanger() {

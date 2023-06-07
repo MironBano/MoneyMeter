@@ -26,8 +26,20 @@
         android:layout_marginStart="13dp"
 
         android:background="@drawable/donaticon"
-
+        android:onClick="notReadyWarning"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/noteIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="13dp"
+
+        android:background="@drawable/noteicon"
+
+        app:layout_constraintEnd_toStartOf="@+id/settingsButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
