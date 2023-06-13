@@ -57,6 +57,8 @@ class Inflation: AppCompatActivity() {
             return
         }
 
+
+
         val startAm:Int = binding.startAmount.text.toString().toInt()
         val term:Int = binding.textTermNumber.text.removeSuffix(" лет").toString().toInt()
         val rate:Int = binding.textRateNumber.text.removeSuffix(" %").toString().toInt()

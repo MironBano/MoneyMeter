@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
 
+
         binding.compoundInterestButton.setOnClickListener{
             val intent = Intent(this@MainActivity, CompoundInterest::class.java)
             startActivity(intent)
