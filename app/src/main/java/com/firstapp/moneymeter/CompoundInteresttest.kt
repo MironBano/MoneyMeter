@@ -15,11 +15,13 @@ class CompoundInteresttest: AppCompatActivity() {
         binding = CompoundinteresttestBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.group1.visibility = View.GONE
-        binding.group2.visibility = View.GONE
-        binding.group3.visibility = View.GONE
-        binding.taxElements.visibility = View.GONE
-        binding.reinvestmentElements.visibility = View.GONE
+        with(binding){
+            group1.visibility = View.GONE
+            group2.visibility = View.GONE
+            group3.visibility = View.GONE
+            taxElements.visibility = View.GONE
+            reinvestmentElements.visibility = View.GONE
+        }
 
         binding.termSlider.addOnChangeListener { slider, value, fromUser ->
             binding.textTermNumber.text = value.toInt().toString() + " лет"
@@ -84,17 +86,20 @@ class CompoundInteresttest: AppCompatActivity() {
                 binding.group3.visibility = View.GONE
 
                 //отчистка данных в блоках доп вложений
-                binding.AdditionalAttachmentsAmount.setText("")
-                binding.AdditionalAttachmentsTime.setText("")
+                with(binding){
+                    AdditionalAttachmentsAmount.setText("")
+                    AdditionalAttachmentsTime.setText("")
 
-                binding.AdditionalAttachments2Amount.setText("")
-                binding.AdditionalAttachments2Time.setText("")
+                    AdditionalAttachments2Amount.setText("")
+                    AdditionalAttachments2Time.setText("")
 
-                binding.AdditionalAttachments3Amount.setText("")
-                binding.AdditionalAttachments3Time.setText("")
+                    AdditionalAttachments3Amount.setText("")
+                    AdditionalAttachments3Time.setText("")
+                }
             }
-
         }
+
+
     }
 
     override fun onStart() {
@@ -140,8 +145,6 @@ class CompoundInteresttest: AppCompatActivity() {
             notEnoughData()
             return
         }
-
-        binding.startAmount.text = binding.InitAmount.text.toString()
 
         val startAm:Int = binding.InitAmount.text.toString().toInt()
         val term:Int = binding.textTermNumber.text.removeSuffix(" лет").toString().toInt()

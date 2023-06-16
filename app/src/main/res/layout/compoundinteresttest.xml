@@ -281,15 +281,13 @@
 
             <Switch
                 android:id="@+id/taxSwitch"
+                android:layout_width="wrap_content"
+
+                android:layout_height="26dp"
                 android:theme="@style/MySwitch"
 
-                android:layout_width="wrap_content"
-                android:layout_height="26dp"
-                android:layout_marginEnd="26dp"
-
-
-                app:layout_constraintEnd_toEndOf="@+id/backWithSwitch"
-
+                app:layout_constraintEnd_toEndOf="@+id/reinvestmentSwitch"
+                app:layout_constraintStart_toStartOf="@+id/reinvestmentSwitch"
                 app:layout_constraintTop_toTopOf="@+id/taxText"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
@@ -298,15 +296,13 @@
                 android:layout_width="wrap_content"
 
                 android:layout_height="26dp"
-                android:layout_marginEnd="26dp"
+
                 android:theme="@style/MySwitch"
 
-
-                app:layout_constraintEnd_toEndOf="@+id/backWithSwitch"
-
+                app:layout_constraintEnd_toEndOf="@+id/addAttSwitch"
+                app:layout_constraintStart_toStartOf="@+id/addAttSwitch"
                 app:layout_constraintTop_toTopOf="@+id/additionalAttText"
-                tools:ignore="UseSwitchCompatOrMaterialXml"
-                />
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <Switch
                 android:id="@+id/addAttSwitch"
@@ -314,14 +310,13 @@
 
                 android:layout_height="26dp"
                 android:layout_marginEnd="26dp"
+                android:layout_marginStart="26dp"
+
                 android:theme="@style/MySwitch"
-
-
                 app:layout_constraintEnd_toEndOf="@+id/backWithSwitch"
-
+                app:layout_constraintStart_toEndOf="@+id/reinvestmentText"
                 app:layout_constraintTop_toTopOf="@+id/reinvestmentText"
-                tools:ignore="UseSwitchCompatOrMaterialXml"
-                />
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <View
                 android:id="@+id/taxBack"
@@ -784,7 +779,7 @@
             <View
                 android:id="@+id/backAnal"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="130dp"
 
                 android:layout_marginStart="13dp"
                 android:layout_marginTop="13dp"
@@ -803,7 +798,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="13dp"
 
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="13dp"
                 android:text="Итоговая сумма:"
                 app:layout_constraintStart_toStartOf="@id/backAnal"
                 app:layout_constraintTop_toTopOf="@id/backAnal"
@@ -876,32 +871,6 @@
                 app:layout_constraintBottom_toBottomOf="@+id/aditionAttachmentsText"
                 app:layout_constraintStart_toEndOf="@+id/aditionAttachmentsText"
                 app:layout_constraintTop_toTopOf="@+id/aditionAttachmentsText" />
-
-            <TextView
-                android:id="@+id/startAmountText"
-
-                style="@style/TextPrimary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="13dp"
-                android:layout_marginTop="13dp"
-
-                android:text="Начальная сумма:"
-                app:layout_constraintStart_toStartOf="@id/backAnal"
-                app:layout_constraintTop_toBottomOf="@+id/aditionAttachmentsText" />
-
-            <TextView
-                android:id="@+id/startAmount"
-
-                style="@style/TextPrimary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-
-                android:text=""
-                app:layout_constraintBottom_toBottomOf="@+id/startAmountText"
-                app:layout_constraintStart_toEndOf="@+id/startAmountText"
-                app:layout_constraintTop_toTopOf="@+id/startAmountText" />
 
             <Button
                 android:textColor="@color/black"
