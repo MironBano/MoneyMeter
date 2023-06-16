@@ -24,8 +24,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.donatButton.setOnClickListener{
-            notReadyWarning()
+            val intent = Intent(this@MainActivity, Requisites::class.java)
+            startActivity(intent)
         }
+
+        //binding.donatButton.setOnClickListener{
+        //    notReadyWarning()
+        //}
 
         binding.noteIcon.setOnClickListener{
             notReadyWarning()

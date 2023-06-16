@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <View
+        android:id="@+id/greetings"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="26dp"
+
+        android:layout_marginEnd="13dp"
+        android:background="@drawable/additional_attachments_form"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/greetingsText"
+
+        style="@style/TextPrimary"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+
+        android:text="@string/donationAsk"
+        app:layout_constraintBottom_toBottomOf="@+id/greetings"
+        app:layout_constraintStart_toStartOf="@+id/greetings"
+        app:layout_constraintTop_toTopOf="@+id/greetings" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="13dp"
+
+        android:text="Написать авторам"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/greetings" />
+
+    <View
+        android:id="@+id/emailBack"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="13dp"
+
+        android:layout_marginEnd="13dp"
+        android:background="@drawable/additional_attachments_form"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/emailText"
+
+        style="@style/TextPrimary"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+
+        android:text="@string/emailText"
+        app:layout_constraintBottom_toBottomOf="@+id/emailBack"
+        app:layout_constraintStart_toStartOf="@+id/emailBack"
+        app:layout_constraintTop_toTopOf="@+id/emailBack" />
+
+    <Button
+        android:id="@+id/donatShowButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+
+        android:text="Донат"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailBack" />
+
+    <View
+        android:id="@+id/donatBack"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="13dp"
+
+        android:layout_marginEnd="13dp"
+        android:background="@drawable/additional_attachments_form"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/donatShowButton" />
+
+    <TextView
+        android:id="@+id/donatText"
+
+        style="@style/TextPrimary"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+
+        android:text="@string/donatRequisites"
+
+        app:layout_constraintBottom_toBottomOf="@+id/donatBack"
+        app:layout_constraintStart_toStartOf="@+id/donatBack"
+        app:layout_constraintTop_toTopOf="@+id/donatBack" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

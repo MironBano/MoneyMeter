@@ -37,4 +37,7 @@
     <string name="taxRate">Налоговая ставка</string>
     <string name="taxButtontext">Вычитать из прибыли</string>
     <string name="reinvestment">Реинвестирование</string>
+    <string name="donatRequisites">Карта: 5469 3801 1575\nQIWI: BUNANO</string>
+    <string name="emailText">По вопросам трудоустройства:\nrybak.m.yu@gmail.com\n\nПожелания и отзывы:\nmiron.ryb@gmail.com\nTelegram: @Mirongus\nVK: @bunano</string>
+    <string name="donationAsk">Если вам нравится наше приложение, поддержите авторов.\nВы - наш единственный источник финансирования 💛.\n \nОставьте отзыв в Google Play, это очень поможет нам развиваться</string>
 </resources>
