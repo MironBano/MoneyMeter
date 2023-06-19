@@ -84,7 +84,7 @@
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/backWithSwitch" />
+                app:layout_constraintTop_toBottomOf="@+id/taxBack" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -255,28 +255,28 @@
                 app:layout_constraintTop_toTopOf="@+id/backWithSwitch" />
 
             <TextView
-                android:id="@+id/additionalAttText"
+                android:id="@+id/reinvestText"
 
                 style="@style/TextPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
 
-                android:text="Период реивестированния"
+                android:text="Реинвест. период"
                 app:layout_constraintStart_toStartOf="@+id/taxText"
                 app:layout_constraintTop_toBottomOf="@+id/taxText" />
 
             <TextView
-                android:id="@+id/reinvestmentText"
+                android:id="@+id/addAttText"
 
                 style="@style/TextPrimary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="13dp"
 
-                android:text="@string/additionalAttachments"
-                app:layout_constraintStart_toStartOf="@+id/additionalAttText"
-                app:layout_constraintTop_toBottomOf="@+id/additionalAttText" />
+                android:text="Доп. вложения"
+                app:layout_constraintStart_toStartOf="@+id/reinvestText"
+                app:layout_constraintTop_toBottomOf="@+id/reinvestText" />
 
 
             <Switch
@@ -301,7 +301,7 @@
 
                 app:layout_constraintEnd_toEndOf="@+id/addAttSwitch"
                 app:layout_constraintStart_toStartOf="@+id/addAttSwitch"
-                app:layout_constraintTop_toTopOf="@+id/additionalAttText"
+                app:layout_constraintTop_toTopOf="@+id/reinvestText"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <Switch
@@ -314,8 +314,7 @@
 
                 android:theme="@style/MySwitch"
                 app:layout_constraintEnd_toEndOf="@+id/backWithSwitch"
-                app:layout_constraintStart_toEndOf="@+id/reinvestmentText"
-                app:layout_constraintTop_toTopOf="@+id/reinvestmentText"
+                app:layout_constraintTop_toTopOf="@+id/addAttText"
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
 
             <View
@@ -329,7 +328,7 @@
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/reinvestmentBack" />
+                app:layout_constraintTop_toBottomOf="@+id/backWithSwitch" />
 
 
             <TextView
@@ -342,6 +341,32 @@
 
                 app:layout_constraintStart_toStartOf="@+id/taxBack"
                 app:layout_constraintTop_toTopOf="@+id/taxBack" />
+
+            <TextView
+                android:id="@+id/subtractText"
+                style="@style/TextPrimary"
+
+                android:layout_marginTop="7dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="52dp"
+                android:text="Вычитать"
+
+                app:layout_constraintEnd_toEndOf="@+id/taxBack"
+                app:layout_constraintStart_toEndOf="@+id/taxRateText"
+                app:layout_constraintTop_toTopOf="@+id/taxBack" />
+
+            <Spinner
+                android:id="@+id/subtractSpinner"
+                style="@style/TextSecondary"
+                android:layout_width="130dp"
+                android:layout_height="48dp"
+
+                android:background="@drawable/edittext_form"
+                android:entries="@array/reinvestmentPeriodArray"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@+id/taxRate"
+                app:layout_constraintStart_toStartOf="@+id/subtractText"
+                app:layout_constraintTop_toTopOf="@+id/taxRate" />
 
             <EditText
                 android:id="@+id/taxRate"
@@ -366,7 +391,7 @@
                 android:id="@+id/taxElements"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:constraint_referenced_ids="taxBack, taxRateText, taxRate"
+                app:constraint_referenced_ids="taxBack, taxRateText, taxRate, subtractSpinner, subtractText"
                 />
 
             <View
@@ -381,7 +406,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
 
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/taxBack" />
+                app:layout_constraintTop_toBottomOf="@id/reinvestmentBack" />
 
             <TextView
                 android:id="@+id/AdditionalAttachmentsText1"

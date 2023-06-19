@@ -72,13 +72,14 @@
         style="@style/TextPrimary"
         android:layout_width="330dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
+        android:layout_marginStart="228dp"
 
         android:text="@string/emailText"
         android:textIsSelectable="true"
         app:layout_constraintBottom_toBottomOf="@+id/emailBack"
         app:layout_constraintStart_toStartOf="@+id/emailBack"
-        app:layout_constraintTop_toTopOf="@+id/emailBack" />
+        app:layout_constraintTop_toTopOf="@+id/emailBack"
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/emailGroup"

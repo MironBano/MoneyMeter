@@ -56,22 +56,6 @@
 
 
             <View
-                android:id="@+id/StartPoint"
-                android:layout_width="13dp"
-                android:layout_height="13dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-
-                />
-
-            <androidx.constraintlayout.widget.Barrier
-                android:id="@+id/mainBarrier"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:barrierDirection="end"
-                app:constraint_referenced_ids="StartPoint" />
-
-            <View
                 android:id="@+id/back2"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
@@ -90,7 +74,7 @@
                 android:layout_marginTop="7dp"
                 android:text="@string/term"
 
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
+                app:layout_constraintStart_toStartOf="@id/back2"
                 app:layout_constraintTop_toTopOf="@id/back2" />
 
 
@@ -145,7 +129,7 @@
                 android:layout_marginTop="7dp"
                 android:text="@string/expectedInflation"
 
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
+                app:layout_constraintStart_toStartOf="@id/back3"
                 app:layout_constraintTop_toTopOf="@id/back3" />
 
             <com.google.android.material.slider.Slider
@@ -207,7 +191,7 @@
                 android:layout_marginTop="13dp"
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/mainBarrier"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inflationButton"
 
                 />
@@ -237,7 +221,7 @@
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:inputType="number"
-                android:maxLength="15"
+                android:maxLength="9"
 
                 android:textSize="17sp"
                 app:layout_constraintStart_toStartOf="@+id/back1"
