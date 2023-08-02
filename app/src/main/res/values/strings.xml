@@ -14,10 +14,10 @@
     <string name="EnterHint3">10 %</string>
     <string name="EnterHint4">15 лет</string>
     <string-array name="reinvestmentPeriodArray">
-        <item>Раз в месяц</item>
+        <item>Раз в год</item>
         <item>Раз в квартал</item>
         <item>Раз в 2 квартала</item>
-        <item>Раз в год</item>
+        <item>Раз в месяц</item>
     </string-array>
     <string-array name="reinvestmentTermArray">
         <item>Месяц</item>
