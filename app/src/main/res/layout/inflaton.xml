@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="52dp"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="@dimen/defaultSpaceVertical"
 
                 android:background="@drawable/selected_button"
                 android:text="@string/inflation"
@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
 
                 android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="@dimen/defaultSpaceVertical"
                 android:layout_marginEnd="52dp"
                 android:alpha="0.5"
                 android:background="@drawable/edittext_form"
@@ -61,7 +61,7 @@
                 android:layout_height="100dp"
 
                 android:layout_marginStart="13dp"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="@dimen/defaultSpaceVertical"
                 android:layout_marginEnd="13dp"
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -116,7 +116,7 @@
                 android:layout_height="100dp"
 
                 android:layout_marginStart="13dp"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="@dimen/defaultSpaceVertical"
                 android:layout_marginEnd="13dp"
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -170,7 +170,7 @@
 
                 android:layout_height="0dp"
                 android:layout_marginStart="13dp"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="@dimen/defaultSpaceVertical"
                 android:layout_marginEnd="13dp"
 
                 android:background="@drawable/edittext_form"
@@ -185,10 +185,10 @@
                 android:id="@+id/back1"
 
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="80dp"
                 android:layout_marginStart="13dp"
                 android:layout_marginEnd="13dp"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="@dimen/defaultSpaceVertical"
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -213,7 +213,7 @@
                 android:layout_width="120dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="13dp"
-                android:layout_marginTop="26dp"
+                android:layout_marginTop="@dimen/defaultSpaceVertical"
 
                 android:background="@drawable/edittext_form"
                 android:cursorVisible="true"
@@ -233,8 +233,8 @@
                 android:background="@drawable/edittext_form"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="26dp"
+                android:layout_marginTop="@dimen/defaultSpaceVertical"
+                android:layout_marginEnd="13dp"
 
                 android:gravity="center"
                 android:text="@string/endAmount"

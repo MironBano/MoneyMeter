@@ -38,6 +38,14 @@
     <string name="taxButtontext">Вычитать из прибыли</string>
     <string name="reinvestment">Реинвестирование</string>
     <string name="donatRequisites">Карта: 5469 3801 1575\nQIWI: BUNANO</string>
-    <string name="emailText">По вопросам трудоустройства:\nrybak.m.yu@gmail.com\n\nПожелания и отзывы:\nmiron.ryb@gmail.com\nTelegram: @Mirongus\nVK: @bunano</string>
+    <string name="emailRequisites">По вопросам правил рассчета:\nmiron.ryb@gmail.com\n\nПожелания и отзывы:\nrybak.m.yu@gmail.com\nTelegram: @Mirongus\nVK: @bunano</string>
     <string name="donationAsk">Если вам нравится наше приложение, поддержите авторов.\nВы - наш единственный источник финансирования 💛.\n \nОставьте отзыв в Google Play, это очень поможет нам развиваться</string>
+    <string name="Intest">Инвестиции</string>
+    <string name="Bonds">Облигации</string>
+    <string name="Stocks">Акции</string>
+    <string name="Futures">Фьючерсы</string>
+    <string name="Finace">Финансы</string>
+    <string name="CurrencyConvenor">Конвентор валют</string>
+    <string name="Credit">Кредит</string>
+    <string name="Mortgage">Ипотека</string>
 </resources>

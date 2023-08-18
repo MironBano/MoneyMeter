@@ -6,14 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/black">
 
-    <com.yandex.mobile.ads.banner.BannerAdView
-        android:id="@+id/topBanner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
 
     <View
         android:id="@+id/greetings"
@@ -53,38 +45,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/greetings" />
 
-    <View
-        android:id="@+id/emailBack"
-        android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="13dp"
-
-        android:layout_marginEnd="13dp"
-        android:background="@drawable/additional_attachments_form"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailButton" />
-
-    <TextView
-        android:id="@+id/emailText"
-
-        style="@style/TextPrimary"
-        android:layout_width="330dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-
-        android:text="@string/emailText"
-        android:textIsSelectable="true"
-        app:layout_constraintBottom_toBottomOf="@+id/emailBack"
-        app:layout_constraintStart_toStartOf="@+id/emailBack"
-        app:layout_constraintTop_toTopOf="@+id/emailBack" />
-
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/emailGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="emailBack,emailText"/>
 
     <Button
         android:id="@+id/donatButton"
@@ -95,41 +55,7 @@
         android:text="Донат"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailBack" />
-
-    <View
-        android:id="@+id/donatBack"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="13dp"
-
-        android:layout_marginEnd="13dp"
-        android:background="@drawable/additional_attachments_form"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/donatButton" />
-
-    <TextView
-        android:id="@+id/donatText"
-
-        style="@style/TextPrimary"
-        android:layout_width="330dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-
-        android:text="@string/donatRequisites"
-        android:textIsSelectable="true"
-
-        app:layout_constraintBottom_toBottomOf="@+id/donatBack"
-        app:layout_constraintStart_toStartOf="@+id/donatBack"
-        app:layout_constraintTop_toTopOf="@+id/donatBack" />
-
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/donatGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="donatBack,donatText"/>
+        app:layout_constraintTop_toBottomOf="@id/emailButton" />
 
     <Button
         android:id="@+id/feedbackButton"
@@ -140,7 +66,8 @@
         android:text="Оставить отзыв"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/donatBack" />
+        app:layout_constraintTop_toBottomOf="@id/donatButton"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

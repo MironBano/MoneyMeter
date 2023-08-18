@@ -1,7 +1,9 @@
 package com.firstapp.moneymeter
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.firstapp.moneymeter.databinding.RequisitesBinding
 import com.yandex.mobile.ads.banner.AdSize
@@ -14,15 +16,10 @@ class Requisites: AppCompatActivity() {
         binding = RequisitesBinding.inflate(layoutInflater).also { setContentView(it.root) }
 
 
-        binding.topBanner.setAdUnitId("demo-banner-yandex")
-        binding.topBanner.setAdSize(AdSize.inlineSize(350,70))
-        val adRequest = AdRequest.Builder().build()
-        binding.topBanner.loadAd(adRequest)
-
-        with(binding){
-            emailGroup.visibility = View.GONE
-            donatGroup.visibility = View.GONE
-        }
+//        binding.topBanner.setAdUnitId("demo-banner-yandex")
+//        binding.topBanner.setAdSize(AdSize.inlineSize(350,70))
+//        val adRequest = AdRequest.Builder().build()
+//        binding.topBanner.loadAd(adRequest)
 
         binding.emailButton.setOnClickListener {
             showEmailRequisities()
@@ -30,6 +27,10 @@ class Requisites: AppCompatActivity() {
 
         binding.donatButton.setOnClickListener {
             showDonatRequisities()
+        }
+
+        binding.feedbackButton.setOnClickListener {
+            showFeedBack()
         }
 
     }
@@ -55,11 +56,35 @@ class Requisites: AppCompatActivity() {
     }
 
     private fun showEmailRequisities(){
-        binding.emailGroup.visibility = View.VISIBLE
+        AlertDialog.Builder(this)
+            .setTitle("Способы связи")
+            .setMessage(R.string.emailRequisites)
+            .setPositiveButton(android.R.string.ok) { _, _ ->
+                Toast.makeText(this, "Спасибо!", Toast.LENGTH_SHORT).show()
+            }
+            .setNegativeButton(android.R.string.cancel, null)
+            .show()
     }
 
     private fun showDonatRequisities(){
-        binding.donatGroup.visibility = View.VISIBLE
+        AlertDialog.Builder(this)
+            .setTitle("Способы поддержки")
+            .setMessage(R.string.donatRequisites)
+            .setPositiveButton(android.R.string.ok) { _, _ ->
+                Toast.makeText(this, "Спасибо!", Toast.LENGTH_SHORT).show()
+            }
+            .setNegativeButton(android.R.string.cancel, null)
+            .show()
+    }
+
+    private fun showFeedBack(){
+        AlertDialog.Builder(this)
+            .setTitle("Скоро в Play Market!")
+            .setMessage("Пока что отзыв нельзя оставить в Google Play")
+            .setPositiveButton(android.R.string.ok) { _, _ ->
+            }
+            .setNegativeButton(android.R.string.cancel, null)
+            .show()
     }
 
 }
