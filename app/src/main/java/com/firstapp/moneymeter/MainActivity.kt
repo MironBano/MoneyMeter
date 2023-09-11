@@ -12,56 +12,68 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
 
+        val notReadyWarning = Toast.makeText(applicationContext, "Раздел в разработке", Toast.LENGTH_SHORT)
 
         binding.compoundInterestButton.setOnClickListener{
             val intent = Intent(this@MainActivity, CompoundInterest::class.java)
+            notReadyWarning.cancel()
             startActivity(intent)
         }
 
         binding.inflationButton.setOnClickListener{
             val intent = Intent(this@MainActivity, Inflation::class.java)
+            notReadyWarning.cancel()
             startActivity(intent)
         }
 
         binding.donatButton.setOnClickListener{
             val intent = Intent(this@MainActivity, Requisites::class.java)
+            notReadyWarning.cancel()
             startActivity(intent)
         }
 
         //binding.donatButton.setOnClickListener{
-        //    notReadyWarning()
+        //    notReadyWarning.show()
         //}
 
         binding.noteIcon.setOnClickListener{
-            notReadyWarning()
+            notReadyWarning.cancel()
+            notReadyWarning.show()
         }
 
         binding.settingsButton.setOnClickListener{
-            notReadyWarning()
+            notReadyWarning.cancel()
+            notReadyWarning.show()
         }
 
         binding.bondButton.setOnClickListener{
-            notReadyWarning()
+            notReadyWarning.cancel()
+            notReadyWarning.show()
         }
 
         binding.stockButton.setOnClickListener{
-            notReadyWarning()
+            notReadyWarning.cancel()
+            notReadyWarning.show()
         }
 
         binding.futureButton.setOnClickListener{
-            notReadyWarning()
+            notReadyWarning.cancel()
+            notReadyWarning.show()
         }
 
         binding.convenorButton.setOnClickListener{
-            notReadyWarning()
+            notReadyWarning.cancel()
+            notReadyWarning.show()
         }
 
         binding.creditButton.setOnClickListener{
-            notReadyWarning()
+            notReadyWarning.cancel()
+            notReadyWarning.show()
         }
 
         binding.mortgageButton.setOnClickListener{
-            notReadyWarning()
+            notReadyWarning.cancel()
+            notReadyWarning.show()
         }
 
 
@@ -86,8 +98,5 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
     }
-
-    private fun notReadyWarning(){
-        Toast.makeText(applicationContext, "Раздел в разработке", Toast.LENGTH_SHORT).show()
-    }
+    
 }

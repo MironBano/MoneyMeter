@@ -23,15 +23,16 @@
     <TextView
         android:id="@+id/greetingsText"
 
-        style="@style/TextPrimary"
+        style="@style/TextSecondary"
+        android:gravity="start"
         android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="13dp"
 
         android:text="@string/donationAsk"
-        app:layout_constraintBottom_toBottomOf="@+id/greetings"
-        app:layout_constraintStart_toStartOf="@+id/greetings"
-        app:layout_constraintTop_toTopOf="@+id/greetings" />
+        app:layout_constraintBottom_toBottomOf="@id/greetings"
+        app:layout_constraintStart_toStartOf="@id/greetings"
+        app:layout_constraintTop_toTopOf="@id/greetings" />
 
     <Button
         android:id="@+id/emailButton"
@@ -43,7 +44,7 @@
         android:text="Написать авторам"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/greetings" />
+        app:layout_constraintTop_toBottomOf="@id/greetings" />
 
 
     <Button
@@ -67,6 +68,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/donatButton"/>
+
+    <com.yandex.mobile.ads.banner.BannerAdView
+        android:id="@+id/BottomBanner"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
 
 

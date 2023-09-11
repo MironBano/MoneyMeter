@@ -26,35 +26,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/inflationButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="52dp"
-                android:layout_marginTop="@dimen/defaultSpaceVertical"
-
-                android:background="@drawable/selected_button"
-                android:text="@string/inflation"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/deflationButton"
-                android:layout_width="wrap_content"
-
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/defaultSpaceVertical"
-                android:layout_marginEnd="52dp"
-                android:alpha="0.5"
-                android:background="@drawable/edittext_form"
-                android:text="@string/deflation"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="MissingConstraints" />
-
-
             <View
                 android:id="@+id/back2"
                 android:layout_width="match_parent"
@@ -69,7 +40,7 @@
 
             <TextView
                 android:id="@+id/amountText"
-                style="@style/TextPrimary"
+                style="@style/TextCommon"
                 android:layout_marginStart="13dp"
                 android:layout_marginTop="7dp"
                 android:text="@string/term"
@@ -96,7 +67,7 @@
             <TextView
                 android:id="@+id/textTermNumber"
 
-                style="@style/TextPrimary"
+                style="@style/TextCommon"
                 android:layout_width="85dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="7dp"
@@ -105,7 +76,6 @@
 
                 android:gravity="center"
                 android:text="0 лет"
-                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/termSlider"
                 app:layout_constraintEnd_toEndOf="@+id/back2"
                 app:layout_constraintTop_toTopOf="@+id/termSlider" />
@@ -124,7 +94,7 @@
 
             <TextView
                 android:id="@+id/rateText"
-                style="@style/TextPrimary"
+                style="@style/TextCommon"
                 android:layout_marginStart="13dp"
                 android:layout_marginTop="7dp"
                 android:text="@string/expectedInflation"
@@ -149,7 +119,7 @@
             <TextView
                 android:id="@+id/textRateNumber"
 
-                style="@style/TextPrimary"
+                style="@style/TextCommon"
                 android:layout_width="70dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="7dp"
@@ -158,7 +128,6 @@
 
                 android:gravity="center"
                 android:text="0 %"
-                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/rateSlider"
                 app:layout_constraintEnd_toEndOf="@id/back3"
                 app:layout_constraintTop_toTopOf="@id/rateSlider" />
@@ -192,9 +161,8 @@
                 android:background="@drawable/additional_attachments_form"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inflationButton"
 
-                />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <View
                 android:layout_width="50dp"
@@ -229,7 +197,7 @@
 
             <TextView
                 android:id="@+id/endAmount"
-                style="@style/TextPrimary"
+                style="@style/TextCommon"
                 android:background="@drawable/edittext_form"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"

@@ -122,7 +122,7 @@ class CompoundInteresttest: AppCompatActivity() {
         super.onDestroy()
     }
 
-    // локика кнопки добавления доп вложений
+    // логика кнопки добавления доп вложений
     private fun showAddAtt() {
         when{
             //groupN необходимо ставить в порядке убывания N
@@ -152,9 +152,7 @@ class CompoundInteresttest: AppCompatActivity() {
         var resultAm:Float = startAm.toFloat()
 
         // рассчет сложного процента
-        for(i in 1..term){
-            resultAm += (resultAm / 100) * rate
-        }
+        for(i in 1..term){ resultAm += (resultAm / 100) * rate }
 
         var incomeAm:Float = resultAm - startAm
 

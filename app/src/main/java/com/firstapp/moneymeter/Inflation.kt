@@ -3,6 +3,7 @@ package com.firstapp.moneymeter
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.addTextChangedListener
 import com.firstapp.moneymeter.databinding.InflatonBinding
 
 class Inflation: AppCompatActivity() {
@@ -23,6 +24,7 @@ class Inflation: AppCompatActivity() {
         binding.calcButton.setOnClickListener{
             amountChanger()
         }
+
 
     }
 
