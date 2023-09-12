@@ -420,7 +420,7 @@
                 app:layout_constraintTop_toTopOf="@+id/backAdditionalAttachments1" />
 
             <EditText
-                android:id="@+id/AdditionalAttachmentsAmount"
+                android:id="@+id/AdditionalAttachments1Amount"
 
                 style="@style/TextSecondary"
                 android:layout_width="wrap_content"
@@ -451,9 +451,9 @@
                 android:background="@drawable/edittext_form"
                 android:entries="@array/reinvestmentPeriodArray"
                 android:textAlignment="center"
-                app:layout_constraintBottom_toBottomOf="@+id/AdditionalAttachmentsAmount"
-                app:layout_constraintStart_toEndOf="@+id/AdditionalAttachmentsAmount"
-                app:layout_constraintTop_toTopOf="@+id/AdditionalAttachmentsAmount" />
+                app:layout_constraintBottom_toBottomOf="@+id/AdditionalAttachments1Amount"
+                app:layout_constraintStart_toEndOf="@+id/AdditionalAttachments1Amount"
+                app:layout_constraintTop_toTopOf="@+id/AdditionalAttachments1Amount" />
 
             <TextView
                 android:id="@+id/AdditionalAttachmentsText2"
@@ -466,10 +466,10 @@
                 android:layout_marginTop="@dimen/defaultSpaceVertical"
                 android:text="@string/term"
                 app:layout_constraintStart_toStartOf="@id/backAdditionalAttachments1"
-                app:layout_constraintTop_toBottomOf="@id/AdditionalAttachmentsAmount" />
+                app:layout_constraintTop_toBottomOf="@id/AdditionalAttachments1Amount" />
 
             <EditText
-                android:id="@+id/AdditionalAttachmentsTime"
+                android:id="@+id/AdditionalAttachments1Time"
 
                 style="@style/TextSecondary"
                 android:layout_width="48dp"
@@ -499,15 +499,15 @@
                 android:background="@drawable/edittext_form"
                 android:entries="@array/reinvestmentTermArray"
                 android:textAlignment="center"
-                app:layout_constraintBottom_toBottomOf="@id/AdditionalAttachmentsTime"
-                app:layout_constraintStart_toEndOf="@id/AdditionalAttachmentsTime"
-                app:layout_constraintTop_toTopOf="@id/AdditionalAttachmentsTime" />
+                app:layout_constraintBottom_toBottomOf="@id/AdditionalAttachments1Time"
+                app:layout_constraintStart_toEndOf="@id/AdditionalAttachments1Time"
+                app:layout_constraintTop_toTopOf="@id/AdditionalAttachments1Time" />
 
             <androidx.constraintlayout.widget.Group
                 android:id="@+id/group1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:constraint_referenced_ids="backAdditionalAttachments1,AdditionalAttachmentsText1,AdditionalAttachmentsAmount,AdditionalAttachmentsSpinner1,AdditionalAttachmentsText2,AdditionalAttachmentsTime,AdditionalAttachmentsSpinner2, plusButton" />
+                app:constraint_referenced_ids="backAdditionalAttachments1,AdditionalAttachmentsText1,AdditionalAttachments1Amount,AdditionalAttachmentsSpinner1,AdditionalAttachmentsText2,AdditionalAttachments1Time,AdditionalAttachmentsSpinner2, plusButton" />
 
             <View
                 android:id="@+id/backAdditionalAttachments2"

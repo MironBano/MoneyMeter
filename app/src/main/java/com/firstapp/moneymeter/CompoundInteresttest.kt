@@ -74,6 +74,7 @@ class CompoundInteresttest: AppCompatActivity() {
 
         }
 
+
         binding.addAttSwitch.setOnCheckedChangeListener { compoundButton, isChecked ->
 
             if(isChecked){
@@ -87,8 +88,8 @@ class CompoundInteresttest: AppCompatActivity() {
 
                 //отчистка данных в блоках доп вложений
                 with(binding){
-                    AdditionalAttachmentsAmount.setText("")
-                    AdditionalAttachmentsTime.setText("")
+                    AdditionalAttachments1Amount.setText("")
+                    AdditionalAttachments1Time.setText("")
 
                     AdditionalAttachments2Amount.setText("")
                     AdditionalAttachments2Time.setText("")
@@ -101,6 +102,7 @@ class CompoundInteresttest: AppCompatActivity() {
 
 
     }
+
 
     override fun onStart() {
         super.onStart()
@@ -141,19 +143,53 @@ class CompoundInteresttest: AppCompatActivity() {
     }
 
     private fun analiticsChanger() {
-        if((binding.InitAmount.text.toString() == "") || (binding.textTermNumber.text.toString() == "") || (binding.textRateNumber.text.toString() == "")){
+
+        // Проверка введены ли все минимальные необходимые данные P.S. Убрать проверки в отдельную функцию
+        if((binding.InitAmount.text.toString() == "") ||
+            (binding.textTermNumber.text.toString() == "") ||
+            (binding.textRateNumber.text.toString() == ""))
+        {
             notEnoughData()
             return
         }
 
-        val startAm:Int = binding.InitAmount.text.toString().toInt()
-        val term:Int = binding.textTermNumber.text.removeSuffix(" лет").toString().toInt()
-        val rate:Int = binding.textRateNumber.text.removeSuffix(" %").toString().toInt()
-        var resultAm:Float = startAm.toFloat()
+        var AddAtt1Permission: Boolean = false
+        var AdditionalAttachments1Time: Int = 0
+        var AdditionalAttachment1Amount: Int = 0
+
+        if(binding.addAttSwitch.isChecked) {
+            if ((binding.AdditionalAttachments1Time.text.toString() == "") || (binding.AdditionalAttachments1Amount.text.toString() == ""))
+            {
+                notEnoughData()
+                return
+            } else {
+                AdditionalAttachments1Time =
+                    binding.AdditionalAttachments1Time.text.toString().toInt()
+                AdditionalAttachment1Amount =
+                    binding.AdditionalAttachments1Amount.text.toString().toInt()
+                AddAtt1Permission = true
+            }
+        }
+
+        val startAm: Int = binding.InitAmount.text.toString().toInt()
+        val term: Int = binding.textTermNumber.text.removeSuffix(" лет").toString().toInt()
+        val rate: Int = binding.textRateNumber.text.removeSuffix(" %").toString().toInt()
+        var resultAm: Float = startAm.toFloat()
+
 
         // рассчет сложного процента
-        for(i in 1..term){ resultAm += (resultAm / 100) * rate }
+        var AdditionalAttachments1TimeCounter: Int = 1
 
+        for(i in 1..term){
+            if( AddAtt1Permission && (AdditionalAttachments1TimeCounter <= AdditionalAttachments1Time) ){
+                resultAm += AdditionalAttachment1Amount
+                AdditionalAttachments1TimeCounter += 1
+            }
+            resultAm += (resultAm / 100) * rate
+        }
+        AddAtt1Permission = false
+
+        // исправить с доп вложениями
         var incomeAm:Float = resultAm - startAm
 
         // Вычетание налогов
