@@ -15,6 +15,8 @@ class CompoundInteresttest: AppCompatActivity() {
         binding = CompoundinteresttestBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val notReadyWarning = Toast.makeText(applicationContext, "Раздел в разработке, данные не повлияют на результат", Toast.LENGTH_LONG)
+
         with(binding){
             group1.visibility = View.GONE
             group2.visibility = View.GONE
@@ -33,6 +35,8 @@ class CompoundInteresttest: AppCompatActivity() {
 
         binding.plusButton.setOnClickListener {
             showAddAtt()
+            notReadyWarning.cancel()
+            notReadyWarning.show()
         }
 
         binding.calcButton.setOnClickListener{
@@ -79,7 +83,6 @@ class CompoundInteresttest: AppCompatActivity() {
 
             if(isChecked){
                 binding.group1.visibility = View.VISIBLE
-                notReadyWarning()
             }
             else{
                 binding.group1.visibility = View.GONE
@@ -100,9 +103,7 @@ class CompoundInteresttest: AppCompatActivity() {
             }
         }
 
-
     }
-
 
     override fun onStart() {
         super.onStart()
@@ -129,13 +130,9 @@ class CompoundInteresttest: AppCompatActivity() {
         when{
             //groupN необходимо ставить в порядке убывания N
 
-            binding.group2.visibility === View.VISIBLE -> binding.group3.visibility = View.VISIBLE
-            binding.group1.visibility === View.VISIBLE -> binding.group2.visibility = View.VISIBLE
+            binding.group2.visibility == View.VISIBLE -> binding.group3.visibility = View.VISIBLE
+            binding.group1.visibility == View.VISIBLE -> binding.group2.visibility = View.VISIBLE
         }
-    }
-
-    private fun notReadyWarning(){
-        Toast.makeText(applicationContext, "Раздел в разработке, ввод данных не повлияет на результат", Toast.LENGTH_LONG).show()
     }
 
     private fun notEnoughData(){
@@ -144,31 +141,9 @@ class CompoundInteresttest: AppCompatActivity() {
 
     private fun analiticsChanger() {
 
-        // Проверка введены ли все минимальные необходимые данные P.S. Убрать проверки в отдельную функцию
-        if((binding.InitAmount.text.toString() == "") ||
-            (binding.textTermNumber.text.toString() == "") ||
-            (binding.textRateNumber.text.toString() == ""))
-        {
+        if (!minimalDataCheck()) {
             notEnoughData()
             return
-        }
-
-        var AddAtt1Permission: Boolean = false
-        var AdditionalAttachments1Time: Int = 0
-        var AdditionalAttachment1Amount: Int = 0
-
-        if(binding.addAttSwitch.isChecked) {
-            if ((binding.AdditionalAttachments1Time.text.toString() == "") || (binding.AdditionalAttachments1Amount.text.toString() == ""))
-            {
-                notEnoughData()
-                return
-            } else {
-                AdditionalAttachments1Time =
-                    binding.AdditionalAttachments1Time.text.toString().toInt()
-                AdditionalAttachment1Amount =
-                    binding.AdditionalAttachments1Amount.text.toString().toInt()
-                AddAtt1Permission = true
-            }
         }
 
         val startAm: Int = binding.InitAmount.text.toString().toInt()
@@ -176,30 +151,62 @@ class CompoundInteresttest: AppCompatActivity() {
         val rate: Int = binding.textRateNumber.text.removeSuffix(" %").toString().toInt()
         var resultAm: Float = startAm.toFloat()
 
+        var AddAtt1Permission: Boolean = false
+        var AddAtt1Time: Int = 0
+        var AddAtt1Amount: Int = 0
+        var AddAtt1Sum: Int = 0
 
-        // рассчет сложного процента
-        var AdditionalAttachments1TimeCounter: Int = 1
+        if(binding.addAttSwitch.isChecked) {
+            if (!minimalAddAtt1DataCheck())
+            {
+                notEnoughData()
+                return
+            } else {
+                AddAtt1Time = binding.AdditionalAttachments1Time.text.toString().toInt()
+                AddAtt1Amount = binding.AdditionalAttachments1Amount.text.toString().toInt()
+                AddAtt1Sum = AddAtt1Amount * ( if(term > AddAtt1Time) AddAtt1Time  else term )      // сумма всех доп вложений (пока только при доп вложениях раз в год)
+                AddAtt1Permission = true
+            }
+        }
+
+        // рассчет сложного процента  с доп вложениями раз в год
+        var AddAtt1TimeCounter: Int = 1
 
         for(i in 1..term){
-            if( AddAtt1Permission && (AdditionalAttachments1TimeCounter <= AdditionalAttachments1Time) ){
-                resultAm += AdditionalAttachment1Amount
-                AdditionalAttachments1TimeCounter += 1
+            if( AddAtt1Permission && (AddAtt1TimeCounter <= AddAtt1Time) ){
+                resultAm += AddAtt1Amount
+                AddAtt1TimeCounter += 1
             }
             resultAm += (resultAm / 100) * rate
         }
         AddAtt1Permission = false
 
         // исправить с доп вложениями
-        var incomeAm:Float = resultAm - startAm
+        var incomeAm:Float = resultAm - startAm - AddAtt1Sum
 
-        // Вычетание налогов
+        // Вычетание налогов (только в конце инвестирования) P.S. добавить на каждый год
         if(binding.taxRate.text.toString() != ""){
             resultAm -= (incomeAm/100) * binding.taxRate.text.toString().toInt()
-            incomeAm = resultAm - startAm
+            incomeAm = resultAm - startAm - AddAtt1Sum
         }
 
         binding.incomeAmount.text = incomeAm.toInt().toString()
         binding.resultAmount.text = resultAm.toInt().toString()
     }
 
+    private fun minimalDataCheck(): Boolean{
+        if((binding.InitAmount.text.toString() == "") ||
+           (binding.textTermNumber.text.toString() == "") ||
+           (binding.textRateNumber.text.toString() == ""))
+        {
+            return false
+        }
+        return true
+    }
+    private fun minimalAddAtt1DataCheck(): Boolean{
+        if ((binding.AdditionalAttachments1Time.text.toString() == "") || (binding.AdditionalAttachments1Amount.text.toString() == "")) {
+            return false
+        }
+        return true
+    }
 }
