@@ -22,10 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.firstapp.moneymeter.CompoundInterest" />
+        <activity android:name=".CompoundInterest" />
         <activity android:name=".Inflation"/>
         <activity android:name=".CompoundInteresttest"/>
         <activity android:name=".Requisites"/>
+        <activity android:name=".Bonds"/>
     </application>
 
 </manifest>
