@@ -4,15 +4,15 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.firstapp.moneymeter.databinding.RequisitesBinding
+import com.firstapp.moneymeter.databinding.ActivityRequisitesBinding
 import com.yandex.mobile.ads.banner.BannerAdSize
 import com.yandex.mobile.ads.common.AdRequest
 
-class Requisites: AppCompatActivity() {
-    lateinit var binding: RequisitesBinding
+class RequisitesActivity: AppCompatActivity() {
+    lateinit var binding: ActivityRequisitesBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = RequisitesBinding.inflate(layoutInflater).also { setContentView(it.root) }
+        binding = ActivityRequisitesBinding.inflate(layoutInflater).also { setContentView(it.root) }
 
 
         binding.BottomBanner.setAdUnitId("demo-banner-yandex")
@@ -20,41 +20,14 @@ class Requisites: AppCompatActivity() {
         val adRequest = AdRequest.Builder().build()
         binding.BottomBanner.loadAd(adRequest)
 
-        binding.emailButton.setOnClickListener {
-            showEmailRequisities()
+        with(binding){
+            emailButton.setOnClickListener { showEmailRequisites() }
+            donatButton.setOnClickListener { showDonatRequisites() }
+            feedbackButton.setOnClickListener { showFeedBack() }
         }
-
-        binding.donatButton.setOnClickListener {
-            showDonatRequisities()
-        }
-
-        binding.feedbackButton.setOnClickListener {
-            showFeedBack()
-        }
-
     }
 
-    override fun onStart() {
-        super.onStart()
-    }
-
-    override fun onResume() {
-        super.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-    }
-
-    override fun onStop() {
-        super.onStop()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-    }
-
-    private fun showEmailRequisities(){
+    private fun showEmailRequisites(){
         AlertDialog.Builder(this)
             .setTitle("Способы связи")
             .setMessage(R.string.emailRequisites)
@@ -65,7 +38,7 @@ class Requisites: AppCompatActivity() {
             .show()
     }
 
-    private fun showDonatRequisities(){
+    private fun showDonatRequisites(){
         AlertDialog.Builder(this)
             .setTitle("Способы поддержки")
             .setMessage(R.string.donatRequisites)

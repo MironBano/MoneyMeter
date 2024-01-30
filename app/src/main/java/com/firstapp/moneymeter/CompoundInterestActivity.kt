@@ -5,43 +5,25 @@ import android.graphics.Color
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.firstapp.moneymeter.databinding.CompoundinterestBinding
-class CompoundInterest: AppCompatActivity() {
+import com.firstapp.moneymeter.databinding.ActivityCompoundinterestBinding
 
-    lateinit var binding: CompoundinterestBinding
+class CompoundInterestActivity: AppCompatActivity() {
+
+    lateinit var binding: ActivityCompoundinterestBinding
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        binding = CompoundinterestBinding.inflate(layoutInflater)
+        binding = ActivityCompoundinterestBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.expandButton.setOnClickListener {
-            val intent = Intent(this@CompoundInterest, CompoundInteresttest::class.java)
+            val intent = Intent(this@CompoundInterestActivity, CompoundInteresttestActivity::class.java)
             startActivity(intent)
         }
 
         binding.calcButton.setOnClickListener {
             doCalculation()
         }
-    }
-    override fun onStart() {
-        super.onStart()
-    }
-
-    override fun onResume() {
-        super.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-    }
-
-    override fun onStop() {
-        super.onStop()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
     }
 
     private fun notEnoughData(){

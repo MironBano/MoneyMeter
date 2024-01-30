@@ -4,15 +4,15 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.firstapp.moneymeter.databinding.CompoundinteresttestBinding
+import com.firstapp.moneymeter.databinding.ActivityCompoundinteresttestBinding
 
-class CompoundInteresttest: AppCompatActivity() {
+class CompoundInteresttestActivity: AppCompatActivity() {
 
-    lateinit var binding: CompoundinteresttestBinding
+    lateinit var binding: ActivityCompoundinteresttestBinding
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        binding = CompoundinteresttestBinding.inflate(layoutInflater)
+        binding = ActivityCompoundinteresttestBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val notReadyWarning = Toast.makeText(applicationContext, "Раздел в разработке, данные не повлияют на результат", Toast.LENGTH_LONG)
@@ -78,7 +78,6 @@ class CompoundInteresttest: AppCompatActivity() {
 
         }
 
-
         binding.addAttSwitch.setOnCheckedChangeListener { compoundButton, isChecked ->
 
             if(isChecked){
@@ -105,31 +104,11 @@ class CompoundInteresttest: AppCompatActivity() {
 
     }
 
-    override fun onStart() {
-        super.onStart()
-    }
-
-    override fun onResume() {
-        super.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-    }
-
-    override fun onStop() {
-        super.onStop()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-    }
 
     // логика кнопки добавления доп вложений
     private fun showAddAtt() {
         when{
             //groupN необходимо ставить в порядке убывания N
-
             binding.group2.visibility == View.VISIBLE -> binding.group3.visibility = View.VISIBLE
             binding.group1.visibility == View.VISIBLE -> binding.group2.visibility = View.VISIBLE
         }
@@ -195,18 +174,11 @@ class CompoundInteresttest: AppCompatActivity() {
     }
 
     private fun minimalDataCheck(): Boolean{
-        if((binding.InitAmount.text.toString() == "") ||
-           (binding.textTermNumber.text.toString() == "") ||
-           (binding.textRateNumber.text.toString() == ""))
-        {
-            return false
-        }
-        return true
+        return !((binding.InitAmount.text.toString() == "") ||
+                (binding.textTermNumber.text.toString() == "") ||
+                (binding.textRateNumber.text.toString() == ""))
     }
     private fun minimalAddAtt1DataCheck(): Boolean{
-        if ((binding.AdditionalAttachments1Time.text.toString() == "") || (binding.AdditionalAttachments1Amount.text.toString() == "")) {
-            return false
-        }
-        return true
+        return !((binding.AdditionalAttachments1Time.text.toString() == "") || (binding.AdditionalAttachments1Amount.text.toString() == ""))
     }
 }

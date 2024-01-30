@@ -3,13 +3,13 @@ package com.firstapp.moneymeter
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.firstapp.moneymeter.databinding.InflatonBinding
+import com.firstapp.moneymeter.databinding.ActivityInflatonBinding
 
-class Inflation: AppCompatActivity() {
-    lateinit var binding: InflatonBinding
+class InflationActivity: AppCompatActivity() {
+    lateinit var binding: ActivityInflatonBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = InflatonBinding.inflate(layoutInflater)
+        binding = ActivityInflatonBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.termSlider.addOnChangeListener { slider, value, fromUser ->
@@ -24,27 +24,6 @@ class Inflation: AppCompatActivity() {
             amountChanger()
         }
 
-
-    }
-
-    override fun onStart() {
-        super.onStart()
-    }
-
-    override fun onResume() {
-        super.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-    }
-
-    override fun onStop() {
-        super.onStop()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
     }
 
     private fun notEnoughData(){
@@ -57,8 +36,6 @@ class Inflation: AppCompatActivity() {
             notEnoughData()
             return
         }
-
-
 
         val startAm:Int = binding.startAmount.text.toString().toInt()
         val term:Int = binding.textTermNumber.text.removeSuffix(" лет").toString().toInt()

@@ -22,11 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CompoundInterest" />
-        <activity android:name=".Inflation"/>
-        <activity android:name=".CompoundInteresttest"/>
-        <activity android:name=".Requisites"/>
-        <activity android:name=".Bonds"/>
+        <activity android:name=".CompoundInterestActivity" />
+        <activity android:name=".InflationActivity"/>
+        <activity android:name=".CompoundInteresttestActivity"/>
+        <activity android:name=".RequisitesActivity"/>
+        <activity android:name=".BondsActivity"/>
     </application>
 
 </manifest>
