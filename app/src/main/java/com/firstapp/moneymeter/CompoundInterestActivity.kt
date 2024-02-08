@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.firstapp.moneymeter.databinding.ActivityCompoundinterestBinding
+import kotlin.math.roundToInt
 
 class CompoundInterestActivity: AppCompatActivity() {
 
@@ -22,30 +23,30 @@ class CompoundInterestActivity: AppCompatActivity() {
         }
 
         binding.calcButton.setOnClickListener {
-            doCalculation()
+            binding.endAmount.text = doCalculation().toString()
+            binding.endAmount.setTextColor(Color.parseColor("#FFFFFF"))
         }
     }
 
     private fun notEnoughData(){
         Toast.makeText(applicationContext, "Не все данные введены", Toast.LENGTH_SHORT).show()
     }
-    private fun doCalculation(){
+
+    private fun doCalculation(): Double{
         if((binding.startAmount.text.toString() == "") || (binding.termAmount.text.toString() == "") || (binding.rateAmount.text.toString() == "")){
             notEnoughData()
-            return
+            return 0.0
         }
 
         val startAm:Int = binding.startAmount.text.toString().toInt()
         val term:Int = binding.termAmount.text.toString().toInt()
-        val rate:Int = binding.rateAmount.text.toString().toInt()
-        var endAm:Float = startAm.toFloat()
+        val rate:Double = binding.rateAmount.text.toString().toDouble()
+        var endAm:Double = startAm.toDouble()
 
         for(i in 1..term){
             endAm += (endAm / 100) * rate
         }
-
-        binding.endAmount.text = endAm.toInt().toString()
-        binding.endAmount.setTextColor(Color.parseColor("#FFFFFF"))
+        return (endAm * 100).roundToInt() / 100.0
     }
 
 }

@@ -57,226 +57,211 @@
         app:layout_constraintTop_toTopOf="@id/TopBackView"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <ScrollView
-        android:id="@+id/mainScroll"
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/TextPrimary"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="@dimen/defaultSpaceVertical"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Intest"
+
+        app:layout_constraintStart_toStartOf="@id/TopBackView"
+        app:layout_constraintTop_toBottomOf="@id/TopBackView" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/compoundInterestButton"
+        style="@style/TextView"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="@dimen/defaultSpaceVertical"
+        android:layout_marginEnd="52dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="70dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        android:background="@drawable/additional_attachments_form"
+        android:text="@string/CIButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@id/textView" />
 
-            <TextView
-                android:id="@+id/textView"
-                style="@style/TextPrimary"
-                android:layout_marginStart="26dp"
-                android:layout_marginTop="@dimen/defaultSpaceVertical"
+    <View
+        android:id="@+id/CIicon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/ciicon"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toTopOf="@id/compoundInterestButton" />
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Intest"
-
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/compoundInterestButton"
-                style="@style/TextView"
-                android:layout_marginStart="87dp"
-                android:layout_marginTop="@dimen/defaultSpaceVertical"
-                android:layout_marginEnd="52dp"
-                android:layout_width="match_parent"
-
-                android:background="@drawable/additional_attachments_form"
-                android:text="@string/CIButton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/textView"
-                app:layout_constraintTop_toBottomOf="@id/textView" />
-
-            <View
-                android:id="@+id/CIicon"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/ciicon"
-                app:layout_constraintStart_toStartOf="@id/textView"
-                app:layout_constraintTop_toTopOf="@id/compoundInterestButton" />
-
-            <View
-                android:id="@+id/InflationIcon"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/inflationicon"
-                app:layout_constraintStart_toStartOf="@id/textView"
-                app:layout_constraintTop_toTopOf="@id/inflationButton" />
+    <View
+        android:id="@+id/InflationIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/inflationicon"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toTopOf="@id/inflationButton" />
 
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/inflationButton"
-                style="@style/TextView"
-                android:layout_width="match_parent"
-                android:layout_marginTop="@dimen/defaultSpaceVertical"
-                android:layout_marginStart="87dp"
-                android:layout_marginEnd="52dp"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/inflationButton"
+        style="@style/TextView"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/defaultSpaceVertical"
+        android:layout_marginStart="87dp"
+        android:layout_marginEnd="52dp"
 
-                android:background="@drawable/additional_attachments_form"
-                android:text="@string/inflation"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/textView"
-                app:layout_constraintTop_toBottomOf="@id/compoundInterestButton" />
+        android:background="@drawable/additional_attachments_form"
+        android:text="@string/inflation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@id/compoundInterestButton" />
 
-            <View
-                android:id="@+id/bondIcon"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/bondicon"
-                app:layout_constraintStart_toStartOf="@id/textView"
-                app:layout_constraintTop_toTopOf="@id/bondButton" />
-
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/bondButton"
-                style="@style/TextView"
-                android:layout_width="match_parent"
-                android:layout_marginTop="@dimen/defaultSpaceVertical"
-                android:layout_marginStart="87dp"
-                android:layout_marginEnd="52dp"
-
-                android:background="@drawable/additional_attachments_form"
-                android:text="@string/Bonds"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/textView"
-                app:layout_constraintTop_toBottomOf="@id/inflationButton" />
-
-            <View
-                android:id="@+id/stockIcon"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/stockicon"
-                app:layout_constraintStart_toStartOf="@id/textView"
-                app:layout_constraintTop_toTopOf="@id/stockButton" />
+    <View
+        android:id="@+id/bondIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bondicon"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toTopOf="@id/bondButton" />
 
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/stockButton"
-                style="@style/TextView"
-                android:layout_width="match_parent"
-                android:layout_marginTop="@dimen/defaultSpaceVertical"
-                android:layout_marginStart="87dp"
-                android:layout_marginEnd="52dp"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bondButton"
+        style="@style/TextView"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/defaultSpaceVertical"
+        android:layout_marginStart="87dp"
+        android:layout_marginEnd="52dp"
 
-                android:background="@drawable/additional_attachments_form"
-                android:text="@string/Stocks"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/textView"
-                app:layout_constraintTop_toBottomOf="@id/bondButton" />
+        android:background="@drawable/additional_attachments_form"
+        android:text="@string/Bonds"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@id/inflationButton" />
 
-            <View
-                android:id="@+id/futureIcon"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/futureicon"
-                app:layout_constraintStart_toStartOf="@id/textView"
-                app:layout_constraintTop_toTopOf="@id/futureButton" />
+    <View
+        android:id="@+id/stockIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/stockicon"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toTopOf="@id/stockButton" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/futureButton"
-                style="@style/TextView"
-                android:layout_width="match_parent"
-                android:layout_marginTop="@dimen/defaultSpaceVertical"
-                android:layout_marginStart="87dp"
-                android:layout_marginEnd="52dp"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/stockButton"
+        style="@style/TextView"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/defaultSpaceVertical"
+        android:layout_marginStart="87dp"
+        android:layout_marginEnd="52dp"
 
-                android:background="@drawable/additional_attachments_form"
-                android:text="@string/Futures"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/textView"
-                app:layout_constraintTop_toBottomOf="@id/stockButton" />
+        android:background="@drawable/additional_attachments_form"
+        android:text="@string/Stocks"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@id/bondButton" />
 
-            <TextView
-                android:id="@+id/FinanceText"
-                style="@style/TextPrimary"
-                android:layout_width="wrap_content"
+    <View
+        android:id="@+id/futureIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/futureicon"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toTopOf="@id/futureButton" />
 
-                android:layout_height="wrap_content"
-                android:layout_marginStart="26dp"
-                android:layout_marginTop="26dp"
-                android:text="@string/Finace"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/futureButton"
+        style="@style/TextView"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/defaultSpaceVertical"
+        android:layout_marginStart="87dp"
+        android:layout_marginEnd="52dp"
 
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/futureButton" />
+        android:background="@drawable/additional_attachments_form"
+        android:text="@string/Futures"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@id/stockButton" />
 
-            <View
-                android:id="@+id/convenorIcon"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/exchngeicon"
-                app:layout_constraintStart_toStartOf="@id/FinanceText"
-                app:layout_constraintTop_toTopOf="@id/convenorButton" />
+    <TextView
+        android:id="@+id/FinanceText"
+        style="@style/TextPrimary"
+        android:layout_width="wrap_content"
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/convenorButton"
-                style="@style/TextView"
-                android:layout_width="match_parent"
-                android:layout_marginTop="@dimen/defaultSpaceVertical"
-                android:layout_marginStart="87dp"
-                android:layout_marginEnd="52dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="26dp"
+        android:text="@string/Finace"
 
-                android:background="@drawable/additional_attachments_form"
-                android:text="@string/CurrencyConvenor"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/textView"
-                app:layout_constraintTop_toBottomOf="@id/FinanceText" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/futureButton" />
 
-            <View
-                android:id="@+id/creditIcon"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/percenticon"
-                app:layout_constraintStart_toStartOf="@id/FinanceText"
-                app:layout_constraintTop_toTopOf="@id/creditButton" />
+    <View
+        android:id="@+id/convenorIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/exchngeicon"
+        app:layout_constraintStart_toStartOf="@id/FinanceText"
+        app:layout_constraintTop_toTopOf="@id/convenorButton" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/creditButton"
-                style="@style/TextView"
-                android:layout_width="match_parent"
-                android:layout_marginTop="@dimen/defaultSpaceVertical"
-                android:layout_marginStart="87dp"
-                android:layout_marginEnd="52dp"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/convenorButton"
+        style="@style/TextView"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/defaultSpaceVertical"
+        android:layout_marginStart="87dp"
+        android:layout_marginEnd="52dp"
 
-                android:background="@drawable/additional_attachments_form"
-                android:text="@string/Credit"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/textView"
-                app:layout_constraintTop_toBottomOf="@id/convenorButton" />
+        android:background="@drawable/additional_attachments_form"
+        android:text="@string/CurrencyConvenor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@id/FinanceText" />
 
+    <View
+        android:id="@+id/creditIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/percenticon"
+        app:layout_constraintStart_toStartOf="@id/FinanceText"
+        app:layout_constraintTop_toTopOf="@id/creditButton" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/creditButton"
+        style="@style/TextView"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/defaultSpaceVertical"
+        android:layout_marginStart="87dp"
+        android:layout_marginEnd="52dp"
 
-            <View
-                android:id="@+id/mortgageIcon"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/mortgageicon"
-                app:layout_constraintStart_toStartOf="@id/FinanceText"
-                app:layout_constraintTop_toTopOf="@id/mortgageButton" />
+        android:background="@drawable/additional_attachments_form"
+        android:text="@string/Credit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@id/convenorButton" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/mortgageButton"
-                style="@style/TextView"
-                android:layout_width="match_parent"
-                android:layout_marginTop="@dimen/defaultSpaceVertical"
-                android:layout_marginStart="87dp"
-                android:layout_marginEnd="52dp"
+    <View
+        android:id="@+id/mortgageIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/mortgageicon"
+        app:layout_constraintStart_toStartOf="@id/FinanceText"
+        app:layout_constraintTop_toTopOf="@id/mortgageButton" />
 
-                android:background="@drawable/additional_attachments_form"
-                android:text="@string/Mortgage"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/textView"
-                app:layout_constraintTop_toBottomOf="@id/creditButton" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/mortgageButton"
+        style="@style/TextView"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/defaultSpaceVertical"
+        android:layout_marginStart="87dp"
+        android:layout_marginEnd="52dp"
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </ScrollView>
+        android:background="@drawable/additional_attachments_form"
+        android:text="@string/Mortgage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@id/creditButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -13,6 +13,5 @@ class BondsActivity: AppCompatActivity() {
         binding = ActivityBondsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
     }
 }

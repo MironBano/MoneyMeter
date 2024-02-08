@@ -116,7 +116,7 @@
                 app:layout_constraintStart_toStartOf="@id/rateText"
                 app:layout_constraintTop_toBottomOf="@id/rateText" />
 
-            <TextView
+            <EditText
                 android:id="@+id/textRateNumber"
 
                 style="@style/TextCommon"
@@ -127,7 +127,9 @@
                 android:background="@drawable/edittext_form"
 
                 android:gravity="center"
-                android:text="0 %"
+                android:hint="0 %"
+                android:inputType="numberDecimal"
+                android:textColorHint="@color/white"
                 app:layout_constraintBottom_toBottomOf="@+id/rateSlider"
                 app:layout_constraintEnd_toEndOf="@id/back3"
                 app:layout_constraintTop_toTopOf="@id/rateSlider" />

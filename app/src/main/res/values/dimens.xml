@@ -2,4 +2,5 @@
 <resources>
     <dimen name="defaultSpaceVertical">15dp</dimen>
     <dimen name="halfDefaultSpaceVertical">8dp</dimen>
+    <dimen name="defaultSpaceHorizontal">15dp</dimen>
 </resources>

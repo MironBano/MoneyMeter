@@ -68,18 +68,15 @@ class CompoundInteresttestActivity: AppCompatActivity() {
         }
 
         binding.reinvestmentSwitch.setOnCheckedChangeListener { compoundButton, isChecked ->
-
             if(isChecked){
                 binding.reinvestmentElements.visibility = View.VISIBLE
             }
             else{
                 binding.reinvestmentElements.visibility = View.GONE
             }
-
         }
 
         binding.addAttSwitch.setOnCheckedChangeListener { compoundButton, isChecked ->
-
             if(isChecked){
                 binding.group1.visibility = View.VISIBLE
             }
@@ -101,14 +98,10 @@ class CompoundInteresttestActivity: AppCompatActivity() {
                 }
             }
         }
-
     }
 
-
-    // логика кнопки добавления доп вложений
     private fun showAddAtt() {
         when{
-            //groupN необходимо ставить в порядке убывания N
             binding.group2.visibility == View.VISIBLE -> binding.group3.visibility = View.VISIBLE
             binding.group1.visibility == View.VISIBLE -> binding.group2.visibility = View.VISIBLE
         }
@@ -152,7 +145,7 @@ class CompoundInteresttestActivity: AppCompatActivity() {
         var AddAtt1TimeCounter: Int = 1
 
         for(i in 1..term){
-            if( AddAtt1Permission && (AddAtt1TimeCounter <= AddAtt1Time) ){
+            if(AddAtt1Permission && (AddAtt1TimeCounter <= AddAtt1Time) ){
                 resultAm += AddAtt1Amount
                 AddAtt1TimeCounter += 1
             }

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.firstapp.moneymeter.databinding.ActivityInflatonBinding
+import kotlin.math.roundToInt
 
 class InflationActivity: AppCompatActivity() {
     lateinit var binding: ActivityInflatonBinding
@@ -12,16 +13,16 @@ class InflationActivity: AppCompatActivity() {
         binding = ActivityInflatonBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.termSlider.addOnChangeListener { slider, value, fromUser ->
+        binding.termSlider.addOnChangeListener { _, value, _ ->
             binding.textTermNumber.text = value.toInt().toString() + " лет"
         }
 
-        binding.rateSlider.addOnChangeListener { slider, value, fromUser ->
-            binding.textRateNumber.text = value.toInt().toString() + " %"
+        binding.rateSlider.addOnChangeListener { _, value, _ ->
+            binding.textRateNumber.setText(value.roundToInt().toString())
         }
 
         binding.calcButton.setOnClickListener{
-            amountChanger()
+            binding.endAmount.text = doCalculation().toString()
         }
 
     }
@@ -30,23 +31,22 @@ class InflationActivity: AppCompatActivity() {
         Toast.makeText(applicationContext, "Не все данные введены", Toast.LENGTH_SHORT).show()
     }
 
-    private fun amountChanger(){
+    private fun doCalculation(): Double{
 
         if((binding.startAmount.text.toString() == "") || (binding.textTermNumber.text.toString() == "") || (binding.textRateNumber.text.toString() == "")){
             notEnoughData()
-            return
+            return 0.0
         }
 
         val startAm:Int = binding.startAmount.text.toString().toInt()
         val term:Int = binding.textTermNumber.text.removeSuffix(" лет").toString().toInt()
-        val rate:Int = binding.textRateNumber.text.removeSuffix(" %").toString().toInt()
-        var endAm:Float = startAm.toFloat()
+        val rate:Double = binding.textRateNumber.text.toString().toDouble()
+        var endAm:Double = startAm.toDouble()
 
         for(i in 1..term){
             endAm -= (endAm / 100) * rate
         }
-
-        binding.endAmount.text = endAm.toInt().toString()
+        return (endAm * 100).roundToInt() / 100.0
     }
 
 }

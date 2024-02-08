@@ -3,67 +3,38 @@ package com.firstapp.moneymeter
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import android.widget.Toast
+import androidx.core.view.forEach
 import com.firstapp.moneymeter.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
+    lateinit var notReadyWarning: Toast
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
 
-        val notReadyWarning = Toast.makeText(applicationContext, "Раздел в разработке", Toast.LENGTH_SHORT)
+        notReadyWarning = Toast.makeText(applicationContext, "Раздел в разработке", Toast.LENGTH_SHORT)
 
-        with(binding){
-            compoundInterestButton.setOnClickListener{
-                val intent = Intent(this@MainActivity, CompoundInterestActivity::class.java)
-                notReadyWarning.cancel()
-                startActivity(intent)
-            }
-            inflationButton.setOnClickListener{
-                val intent = Intent(this@MainActivity, InflationActivity::class.java)
-                notReadyWarning.cancel()
-                startActivity(intent)
-            }
-            donatButton.setOnClickListener{
-                val intent = Intent(this@MainActivity, RequisitesActivity::class.java)
-                notReadyWarning.cancel()
-                startActivity(intent)
-            }
-            noteIcon.setOnClickListener{
-                notReadyWarning.cancel()
-                notReadyWarning.show()
-            }
-            bondButton.setOnClickListener{
-                notReadyWarning.cancel()
-                notReadyWarning.show()
-            }
-            stockButton.setOnClickListener{
-                notReadyWarning.cancel()
-                notReadyWarning.show()
-            }
-            futureButton.setOnClickListener{
-                notReadyWarning.cancel()
-                notReadyWarning.show()
-            }
-            creditButton.setOnClickListener{
-                notReadyWarning.cancel()
-                notReadyWarning.show()
-            }
-            mortgageButton.setOnClickListener{
-                notReadyWarning.cancel()
-                notReadyWarning.show()
-            }
-            settingsButton.setOnClickListener{
+        binding.root.forEach {
+            if(it is Button) it.setOnClickListener(setUniversalListener())
+        }
+    }
+
+    fun setUniversalListener() = View.OnClickListener {
+        when(it.id) {
+            R.id.compoundInterestButton -> startActivity(Intent(this@MainActivity, CompoundInterestActivity::class.java))
+            R.id.inflationButton -> startActivity(Intent(this@MainActivity, InflationActivity::class.java))
+            R.id.donatButton -> startActivity(Intent(this@MainActivity, RequisitesActivity::class.java))
+            else -> {
                 notReadyWarning.cancel()
                 notReadyWarning.show()
             }
         }
-    }
-
-    override fun onStop() {
-        super.onStop()
     }
     
 }
